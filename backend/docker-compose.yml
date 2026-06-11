@@ -1,0 +1,65 @@
+services:
+  jdb-postgres:
+    image: postgres:16-alpine
+    container_name: jdb-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: medusa
+      POSTGRES_USER: medusa
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - jdb_pg_data:/var/lib/postgresql/data
+    networks:
+      - jdb_internal
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U medusa -d medusa"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  jdb-redis:
+    image: redis:7-alpine
+    container_name: jdb-redis
+    restart: unless-stopped
+    command: redis-server --maxmemory 128mb --maxmemory-policy allkeys-lru
+    volumes:
+      - jdb_redis_data:/data
+    networks:
+      - jdb_internal
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  jdb-medusa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jdb-medusa
+    restart: unless-stopped
+    depends_on:
+      jdb-postgres:
+        condition: service_healthy
+      jdb-redis:
+        condition: service_healthy
+    env_file:
+      - .env.production
+    environment:
+      BACKEND_URL: https://api.joiasdodobairro.com.br
+    volumes:
+      - jdb_static:/app/server/static
+    networks:
+      - jdb_internal
+      - proxy
+
+volumes:
+  jdb_pg_data:
+  jdb_redis_data:
+  jdb_static:
+
+networks:
+  jdb_internal:
+    driver: bridge
+  proxy:
+    external: true
