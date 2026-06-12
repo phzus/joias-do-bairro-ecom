@@ -2,36 +2,36 @@
 
 ## O que é
 
-**Joias do Bairro** é um e-commerce de joias com foco em acessibilidade e proximidade com o cliente final. O projeto busca digitalizar e escalar a operação de uma joalheria de bairro, preservando o atendimento personalizado como diferencial.
+**Joias do Bairro** é um projeto de marketing e conteúdo audiovisual com foco em atletas de jiujitsu. O e-commerce existe para suportar os **drops de roupas** do projeto — não é uma joalheria. A identidade é ligada à cultura de artes marciais, filmmaking e streetwear.
 
 ## Objetivos
 
-- [ ] Permitir que clientes naveguem e comprem joias online
-- [ ] Oferecer um catálogo organizado por categorias, materiais e faixas de preço
+- [ ] Permitir que fãs e seguidores comprem as peças dos drops online
+- [ ] Oferecer uma experiência de marca coesa que reflita a identidade do projeto (jiujitsu + audiovisual)
 - [ ] Facilitar a gestão de estoque e pedidos para o lojista
-- [ ] Construir uma experiência de marca coesa e confiável
+- [ ] Suportar lançamentos de coleções em formato de drop (quantidade limitada, data específica)
 
 ## Personas
 
 ### Cliente Final
-Pessoas que buscam joias para presentes ou uso próprio. Valorizam fotos de qualidade, preço transparente e entrega segura.
+Seguidores do projeto, fãs de jiujitsu e cultura de artes marciais. Valorizam identidade de marca forte, edições limitadas e senso de comunidade.
 
 ### Lojista / Admin
-Proprietário da joalheria. Precisa de painel simples para gerenciar produtos, estoque, pedidos e visualizar métricas básicas.
+Responsável pelo projeto. Precisa de painel simples para gerenciar produtos dos drops, estoque, pedidos e visualizar métricas básicas.
 
 ## Contexto de Negócio
 
-> _Atualize esta seção conforme o projeto avançar e mais contexto for obtido com o cliente._
-
-- Segmento: varejo de joias
-- Canal: e-commerce (web-first)
-- Fase atual: ideação / início de desenvolvimento
+- Segmento: moda / streetwear ligado a artes marciais
+- Canal: e-commerce (web-first) com foco em drops
+- Conteúdo: filmmaking de atletas de jiujitsu como pilar de marketing
+- Fase atual: desenvolvimento inicial
 
 ## Fora do Escopo (por agora)
 
 - App mobile nativo
 - Marketplace (múltiplos lojistas)
 - Integração com ERP externo
+- Loja de joias (o nome é do projeto, não o produto)
 
 ---
-_Última atualização: 2026-06-10_
+_Última atualização: 2026-06-12_

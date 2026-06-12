@@ -2,7 +2,7 @@
 
 **Status:** `Proposto` | `Aceito` | `Depreciado` | `Supersedido por ADR-NNN`  
 **Data:** AAAA-MM-DD  
-**Decisores:** [quem participou]
+**Decisores:** Iago (responsável pelo projeto)
 
 ---
 

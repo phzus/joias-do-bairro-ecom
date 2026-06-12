@@ -5,23 +5,25 @@ import LegalLayout, { LegalSection } from './LegalLayout'
 
 const AboutPage: React.FC = () => (
   <LegalLayout eyebrow="Sobre nós" title="Joias do Bairro">
-    <LegalSection title="Quem somos">
+    <LegalSection title="O que é a Joias do Bairro">
       <p>
-        A Joias do Bairro nasceu para trazer joalheria de qualidade perto de
-        você. Cada peça é pensada com cuidado, combinando design com acessibilidade
-        — sem abrir mão do acabamento.
+        Joias do Bairro é um projeto de marketing e conteúdo audiovisual criado
+        em torno da cultura do jiujitsu. Fazemos filmmaking de atletas,
+        produzimos conteúdo e lançamos roupas em drops exclusivos — peças que
+        carregam a identidade das artes marciais e da rua.
       </p>
       <p>
-        Trabalhamos com peças de tiragem cuidadosa, processo artesanal e atenção
-        aos detalhes. O que você usa carrega a nossa identidade.
+        Não somos uma joalheria. O nome é nosso, a identidade é das tatames.
       </p>
     </LegalSection>
 
-    <LegalSection title="Como operamos">
+    <LegalSection title="Como funcionam os drops">
       <p>
-        Somos uma marca independente. Trabalhamos com fornecedores brasileiros,
-        cortando intermediários. Cada compra aqui apoia diretamente a produção e
-        a evolução da nossa coleção.
+        Cada coleção é lançada em quantidade limitada, em uma data específica.
+        Quando acaba, acabou. Sem reposição garantida.
+      </p>
+      <p>
+        Siga nosso Instagram e YouTube para não perder os próximos lançamentos.
       </p>
     </LegalSection>
 

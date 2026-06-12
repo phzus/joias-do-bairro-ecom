@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
         <div className="mb-12 flex flex-col items-center">
           <Logo className="mb-6 scale-125" />
           <p className="text-zinc-500 text-[10px] font-black uppercase tracking-[0.4em] leading-relaxed max-w-xs md:max-w-sm mt-4">
-            Joias feitas com cuidado, pertinho de você.
+            Filmmaking · Jiujitsu · Drops
           </p>
         </div>
 
@@ -94,6 +94,12 @@ const Footer: React.FC = () => {
             className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#e34717] transition-colors"
           >
             Termos
+          </Link>
+          <Link
+            to="/sobre"
+            className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#e34717] transition-colors"
+          >
+            Sobre
           </Link>
         </div>
 

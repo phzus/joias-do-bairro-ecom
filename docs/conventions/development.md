@@ -43,11 +43,33 @@ docs(adr): record decision on payment gateway
 
 ## Nomenclatura
 
-_Preencher conforme tech stack for definida._
+### Geral
+- **Arquivos e pastas:** `kebab-case` (`product-card.tsx`, `use-cart.ts`)
+- **Componentes React:** `PascalCase` (`ProductCard`, `CheckoutForm`)
+- **Hooks:** prefixo `use` + `camelCase` (`useCart`, `useProductList`)
+- **Variáveis e funções:** `camelCase` (`productList`, `handleAddToCart`)
+- **Constantes globais:** `UPPER_SNAKE_CASE` (`MAX_CART_ITEMS`)
+- **Tipos e interfaces TypeScript:** `PascalCase` (`CartItem`, `ProductVariant`)
+
+### Medusa (backend)
+- **Módulos:** pasta em `src/modules/<nome-do-modulo>/`
+- **Rotas customizadas:** `src/api/<versao>/<recurso>/route.ts`
+- **Workflows:** `src/workflows/<nome-do-workflow>.ts`
+- **Subscribers:** `src/subscribers/<evento>.ts`
+
+### Storefront (Next.js)
+- **Views/páginas:** `src/views/<NomeDaView>/index.tsx`
+- **Componentes:** `src/components/<NomeDoComponente>/index.tsx`
+- **Utilitários:** `src/lib/<nome-do-util>.ts`
 
 ## Testes
 
-_Preencher conforme tech stack for definida._
+Stack ainda não definida formalmente para testes. Por ora:
+- Prioridade em testes manuais via storefront antes de marcar feature como concluída
+- Backend: testar endpoints via `curl` ou Postman contra o servidor local
+- Critério de aceite: todos os critérios do spec devem ser validados manualmente
+
+> Atualizar quando uma biblioteca de testes for adotada (ex: Vitest, Playwright).
 
 ---
-_Última atualização: 2026-06-10_
+_Última atualização: 2026-06-12_
