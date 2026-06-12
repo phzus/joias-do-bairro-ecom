@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -49,7 +49,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ title, subtitle, highligh
     <div className={`mt-4 h-px bg-[#e34717]/40 ${highlighted ? 'w-24' : 'w-16'}`} />
     {highlighted && (
       <p className="mt-4 text-xs md:text-sm text-zinc-500 max-w-lg">
-        Stickers exclusivos da Underground — edição limitada, qualidade premium.
+        Edição limitada, qualidade premium. Joias do Bairro.
       </p>
     )}
   </motion.div>
@@ -128,6 +128,16 @@ const ProductListPage: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const graffitiTextRef = useRef<HTMLHeadingElement>(null);
+  const [cropScale, setCropScale] = useState<{ x: number; y: number }>(() => {
+    try {
+      const saved = localStorage.getItem('jdb-hero-crop');
+      if (saved) return JSON.parse(saved);
+    } catch {}
+    return { x: 1, y: 1 };
+  });
+  const [videoVisible, setVideoVisible] = useState(() => {
+    try { return !!localStorage.getItem('jdb-hero-crop'); } catch { return false; }
+  });
   const { products, loading, error } = useProducts();
   const { categories, loading: categoriesLoading } = useCategories();
 
@@ -189,28 +199,74 @@ const ProductListPage: React.FC = () => {
         }
       });
 
-      heroTl.to(videoRef.current, {
-        scale: 1.1,
-        filter: 'brightness(0.2) blur(20px)',
-        y: 100
-      }, 0)
-        .to(graffitiTextRef.current, {
-          y: -100,
-          scale: 0.9,
-          opacity: 0,
-          letterSpacing: "2em"
-        }, 0);
-
-      gsap.to(graffitiTextRef.current, {
-        filter: 'drop-shadow(0 0 20px rgba(227, 71, 23, 0.15))',
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
-      });
+      heroTl.to(graffitiTextRef.current, {
+        y: -100,
+        scale: 0.9,
+        opacity: 0,
+        letterSpacing: "2em"
+      }, 0);
     }, containerRef);
 
     return () => ctx.revert();
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const detectBars = () => {
+      const vw = video.videoWidth;
+      const vh = video.videoHeight;
+      if (!vw || !vh) return;
+
+      const W = Math.min(vw, 320);
+      const H = Math.min(vh, 180);
+      const canvas = document.createElement('canvas');
+      canvas.width = W;
+      canvas.height = H;
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+      if (!ctx) return;
+
+      ctx.drawImage(video, 0, 0, W, H);
+      const { data } = ctx.getImageData(0, 0, W, H);
+
+      const T = 20;
+      const isBlack = (x: number, y: number) => {
+        const i = (y * W + x) * 4;
+        return data[i] < T && data[i + 1] < T && data[i + 2] < T;
+      };
+      const colAllBlack = (x: number) => {
+        for (let y = 0; y < H; y++) if (!isBlack(x, y)) return false;
+        return true;
+      };
+      const rowAllBlack = (y: number) => {
+        for (let x = 0; x < W; x++) if (!isBlack(x, y)) return false;
+        return true;
+      };
+
+      let left = 0;
+      for (let x = 0; x < W >> 1; x++) { if (!colAllBlack(x)) { left = x; break; } }
+      let right = W - 1;
+      for (let x = W - 1; x > W >> 1; x--) { if (!colAllBlack(x)) { right = x; break; } }
+      let top = 0;
+      for (let y = 0; y < H >> 1; y++) { if (!rowAllBlack(y)) { top = y; break; } }
+      let bottom = H - 1;
+      for (let y = H - 1; y > H >> 1; y--) { if (!rowAllBlack(y)) { bottom = y; break; } }
+
+      const contentW = right - left + 1;
+      const contentH = bottom - top + 1;
+      const scale = {
+        x: contentW < W * 0.98 ? W / contentW : 1,
+        y: contentH < H * 0.98 ? H / contentH : 1,
+      };
+      setCropScale(scale);
+      setVideoVisible(true);
+      try { localStorage.setItem('jdb-hero-crop', JSON.stringify(scale)); } catch {}
+    };
+
+    video.addEventListener('loadeddata', detectBars);
+    if (video.readyState >= 2) detectBars();
+    return () => video.removeEventListener('loadeddata', detectBars);
   }, []);
 
   useEffect(() => {
@@ -233,8 +289,8 @@ const ProductListPage: React.FC = () => {
       <div className="bg-flash fixed inset-0 opacity-0 pointer-events-none z-999" />
 
       <div className="relative">
-        <section id="hero-section" className="relative h-[calc(100vh-200px)] lg:h-[80vh] w-full flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
+        <section id="hero-section" className="relative w-full h-[80vh] md:min-h-screen flex items-center justify-center">
+          <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-full overflow-hidden flex items-center justify-center transition-opacity duration-700 h-[80vh] md:h-auto md:w-screen ${videoVisible ? 'opacity-100' : 'opacity-0'}`}>
             <video
               ref={videoRef}
               autoPlay
@@ -251,38 +307,66 @@ const ProductListPage: React.FC = () => {
                 const video = e.currentTarget;
                 video.play().catch(() => {});
               }}
-              className="w-full h-full object-cover grayscale brightness-[0.7] contrast-180 pointer-events-none select-none"
+              className="relative md:static left-[-11vw] md:left-auto h-full w-auto max-w-none md:max-w-full shrink-0 md:shrink-0 md:h-auto md:w-full pointer-events-none select-none"
+              style={{
+                transform: `scaleX(${cropScale.x}) scaleY(${cropScale.y})`,
+                transformOrigin: 'center center',
+              }}
             >
-              <source src="/banner.mp4" type="video/mp4" />
+              <source src="/hero.webm" type="video/webm" />
+              <source src="/hero.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-black/40" />
-            <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-transparent to-black/60" />
           </div>
 
-          <div className="container mx-auto px-6 relative z-20 flex flex-col items-center justify-center text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
+          <div className="relative z-10 w-full flex flex-col items-center justify-center text-center">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-[10px] md:text-xs font-bold uppercase mb-6 md:mb-10 text-[#e34717] tracking-[0.4em]"
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.55em] text-white/40 mb-3 md:mb-4"
             >
-              PREMIUM STREETWEAR
-            </motion.div>
+              LANÇAMENTO
+            </motion.p>
 
             <h1
               ref={graffitiTextRef}
-              className="bg-linear-to-b from-white/60 via-white/40 to-transparent bg-clip-text text-transparent text-[30vw] sm:text-[18vw] md:text-[15vw] lg:text-[12vw] font-black italic tracking-tighter leading-[0.75] uppercase relative transition-all duration-300 select-none -rotate-2 drop-shadow-[0_0_20px_rgba(255,255,255,0.25)] pr-[0.2em]"
+              className="font-black italic uppercase tracking-tight leading-none select-none w-full
+                         text-[10vw] sm:text-[8vw] md:text-[7vw] lg:text-[6vw]"
+              style={{
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.42) 60%, rgba(255,255,255,0.15) 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
             >
-              DROP<br />#001
+              DROP #001
             </h1>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.6 }}
-              transition={{ delay: 1.2 }}
-              className="mt-10 lg:mt-14 flex flex-col items-center"
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.55em] text-white/40 mt-3 md:mt-4"
             >
-              <div className="h-12 lg:h-16 w-px bg-linear-to-b from-[#e34717] to-transparent mb-4" />
-              <p className="text-[9px] font-mono tracking-[.5em] uppercase text-zinc-600">Role para baixo para ver mais</p>
+              DISPONÍVEL
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.65, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-8 md:mt-10"
+            >
+              <button className="
+                px-9 py-3 rounded-full
+                border border-white/30 text-white
+                text-[9px] md:text-[10px] font-bold uppercase tracking-[0.4em]
+                bg-white/5 backdrop-blur-sm
+                hover:bg-white hover:text-black hover:border-white
+                transition-all duration-300
+              ">
+                ENTRE NA PRÉ-LISTA
+              </button>
             </motion.div>
           </div>
         </section>

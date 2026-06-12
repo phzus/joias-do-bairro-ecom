@@ -5,7 +5,7 @@
 ## Estado Atual
 
 **Fase:** Base do projeto estabelecida — código base importado, adaptações de identidade visual pendentes  
-**Última atualização:** 2026-06-10
+**Última atualização:** 2026-06-11
 
 ## Milestones
 
@@ -32,6 +32,7 @@ _Nenhum bloqueio identificado._
 
 ## Concluído Recentemente
 
+- Correção de UI: vídeo do hero agora cobre toda a seção (`object`-cover via `h-full w-auto max-w-none`); causa raiz era o `max-width: 100%` do Preflight do Tailwind v4 travando a largura do vídeo na largura da tela ([ProductListPage.tsx](../../storefront/src/views/ProductListPage.tsx))
 - Repositório Git inicializado
 - Pasta `docs/` criada com estrutura de segundo cérebro
 - `CLAUDE.md` criado com instruções para agentes
