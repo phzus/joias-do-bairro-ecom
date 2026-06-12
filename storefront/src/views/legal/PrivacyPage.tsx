@@ -11,10 +11,10 @@ const PrivacyPage: React.FC = () => (
   >
     <LegalSection title="Quem somos">
       <p>
-        A <strong>Drive It Like Stole It</strong> (driveitlikestoleit) é uma marca
+        A <strong>Joias do Bairro</strong> (joisdobairro) é uma marca
         brasileira de streetwear. Esta política descreve como coletamos, usamos e
         protegemos os seus dados quando você navega e compra em{' '}
-        <code>driveitlikestoleit.com</code>, em conformidade com a LGPD (Lei
+        <code>joisdobairro.com</code>, em conformidade com a LGPD (Lei
         13.709/2018).
       </p>
     </LegalSection>
@@ -64,12 +64,12 @@ const PrivacyPage: React.FC = () => (
       <p>
         Para exercer esses direitos, entre em contato pelo Instagram{' '}
         <a
-          href="https://instagram.com/driveitlikestoleit"
+          href="https://instagram.com/joisdobairro"
           target="_blank"
           rel="noreferrer"
           className="text-[#e34717] hover:underline"
         >
-          @driveitlikestoleit
+          @joisdobairro
         </a>
         .
       </p>

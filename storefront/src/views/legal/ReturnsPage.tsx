@@ -41,12 +41,12 @@ const ReturnsPage: React.FC = () => (
         <li>
           Entre em contato pelo Instagram{' '}
           <a
-            href="https://instagram.com/driveitlikestoleit"
+            href="https://instagram.com/joisdobairro"
             target="_blank"
             rel="noreferrer"
             className="text-[#e34717] hover:underline"
           >
-            @driveitlikestoleit
+            @joisdobairro
           </a>{' '}
           com o número do pedido
         </li>

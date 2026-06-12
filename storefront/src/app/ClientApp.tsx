@@ -104,9 +104,7 @@ const ClientApp = () => {
           <Router>
             <ScrollToTop />
             <div className={`flex flex-col min-h-screen ${isMenuOpen ? 'overflow-hidden h-screen' : ''}`}>
-              <div className="sticky top-0 left-0 w-full z-100">
-                <Header onMenuToggle={() => setIsMenuOpen(!isMenuOpen)} isMenuOpen={isMenuOpen} />
-              </div>
+              <Header onMenuToggle={() => setIsMenuOpen(!isMenuOpen)} isMenuOpen={isMenuOpen} />
               <SideMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
               <main className="grow">
                 <AnimatedRoutes />

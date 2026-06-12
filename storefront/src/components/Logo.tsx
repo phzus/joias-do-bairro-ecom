@@ -3,11 +3,8 @@ import React from 'react';
 
 const Logo: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <div className={`relative flex flex-col items-center select-none ${className}`}>
-      {/* Main Brand */}
-      <div className="relative group">
-        <img src="/logo.png" alt="Logo" className="max-w-82 rotate-8 object-contain" />
-      </div>
+    <div className={`flex items-center select-none ${className ?? ''}`}>
+      <img src="/logo-joias.svg" alt="Joias do Bairro" className="h-9 md:h-10 w-auto object-contain" />
     </div>
   );
 };

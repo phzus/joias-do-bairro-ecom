@@ -11,7 +11,7 @@ const TermsPage: React.FC = () => (
   >
     <LegalSection title="Aceitação">
       <p>
-        Ao acessar e usar a loja <strong>Drive It Like Stole It</strong>, você
+        Ao acessar e usar a loja <strong>Joias do Bairro</strong>, você
         concorda integralmente com estes Termos de Uso. Se não concordar, pedimos
         que não utilize o site.
       </p>
@@ -51,7 +51,7 @@ const TermsPage: React.FC = () => (
     <LegalSection title="Propriedade intelectual">
       <p>
         Todas as imagens, nomes, logos, designs e conteúdos são propriedade da
-        Drive It Like Stole It. Qualquer reprodução, cópia ou uso comercial sem
+        Joias do Bairro. Qualquer reprodução, cópia ou uso comercial sem
         autorização expressa é proibido.
       </p>
     </LegalSection>
@@ -73,7 +73,7 @@ const TermsPage: React.FC = () => (
 
     <LegalSection title="Foro">
       <p>
-        Fica eleito o foro da comarca do domicílio da Drive It Like Stole It
+        Fica eleito o foro da comarca do domicílio da Joias do Bairro
         para dirimir quaisquer controvérsias oriundas destes Termos.
       </p>
     </LegalSection>

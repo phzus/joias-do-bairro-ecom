@@ -4,61 +4,60 @@ import React from 'react'
 import LegalLayout, { LegalSection } from './LegalLayout'
 
 const AboutPage: React.FC = () => (
-  <LegalLayout eyebrow="Manifesto" title="Drive It Like Stole It">
-    <LegalSection title="O movimento">
+  <LegalLayout eyebrow="Sobre nós" title="Joias do Bairro">
+    <LegalSection title="Quem somos">
       <p>
-        Não seguimos tendências. Nós as roubamos, desconstruímos e devolvemos às
-        ruas em forma de arte. A marca nasceu da frustração com um cenário onde
-        streetwear virou mercadoria e a autenticidade virou pose.
+        A Joias do Bairro nasceu para trazer joalheria de qualidade perto de
+        você. Cada peça é pensada com cuidado, combinando design com acessibilidade
+        — sem abrir mão do acabamento.
       </p>
       <p>
-        Cada drop é pensado como uma peça única: tiragem limitada, processo
-        artesanal, nada de esteira de fábrica. O que você veste é o que você
-        defende.
-      </p>
-    </LegalSection>
-
-    <LegalSection title="Como a gente opera">
-      <p>
-        Somos uma marca independente. Trabalhamos direto com fornecedores
-        brasileiros, cortando intermediários. Cada peso gasto aqui volta pra
-        produção do próximo drop e pra quem faz parte do movimento.
+        Trabalhamos com peças de tiragem cuidadosa, processo artesanal e atenção
+        aos detalhes. O que você usa carrega a nossa identidade.
       </p>
     </LegalSection>
 
-    <LegalSection title="Onde encontrar">
+    <LegalSection title="Como operamos">
+      <p>
+        Somos uma marca independente. Trabalhamos com fornecedores brasileiros,
+        cortando intermediários. Cada compra aqui apoia diretamente a produção e
+        a evolução da nossa coleção.
+      </p>
+    </LegalSection>
+
+    <LegalSection title="Onde nos encontrar">
       <ul className="list-disc pl-6 space-y-2">
         <li>
           Instagram:{' '}
           <a
-            href="https://instagram.com/driveitlikestoleit"
+            href="https://instagram.com/joisdobairro"
             target="_blank"
             rel="noreferrer"
             className="text-[#e34717] hover:underline"
           >
-            @driveitlikestoleit
+            @joisdobairro
           </a>
         </li>
         <li>
           YouTube:{' '}
           <a
-            href="https://youtube.com/@driveitlikestoleit"
+            href="https://youtube.com/@joisdobairro"
             target="_blank"
             rel="noreferrer"
             className="text-[#e34717] hover:underline"
           >
-            @driveitlikestoleit
+            @joisdobairro
           </a>
         </li>
         <li>
           TikTok:{' '}
           <a
-            href="https://tiktok.com/@driveitlikestoleit"
+            href="https://tiktok.com/@joisdobairro"
             target="_blank"
             rel="noreferrer"
             className="text-[#e34717] hover:underline"
           >
-            @driveitlikestoleit
+            @joisdobairro
           </a>
         </li>
       </ul>

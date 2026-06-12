@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
     <footer className="bg-[#050505] text-white pt-16 pb-10 border-t border-white/5 relative overflow-hidden">
       {/* Background Decorative Text */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] select-none pointer-events-none w-full text-center">
-        <span className="font-street text-[120px] md:text-[250px] leading-none whitespace-nowrap tracking-tighter">UNDERGROUND</span>
+        <span className="font-street text-[120px] md:text-[250px] leading-none whitespace-nowrap tracking-tighter">JOIAS</span>
       </div>
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
         <div className="mb-12 flex flex-col items-center">
           <Logo className="mb-6 scale-125" />
           <p className="text-zinc-500 text-[10px] font-black uppercase tracking-[0.4em] leading-relaxed max-w-xs md:max-w-sm mt-4">
-            Não seguimos tendências. Nós as roubamos, desconstruímos e devolvemos às ruas em forma de arte.
+            Joias feitas com cuidado, pertinho de você.
           </p>
         </div>
 
@@ -35,13 +35,13 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="flex gap-4 md:gap-6 justify-center">
-            <a href="https://www.instagram.com/driveitlikestoleit" target="_blank" className="group relative flex items-center justify-center w-14 h-14 bg-white/5 border border-white/10 rounded-full hover:bg-[#e34717] hover:border-[#e34717] hover:scale-110 transition-all duration-300">
+            <a href="https://www.instagram.com/joisdobairro" target="_blank" className="group relative flex items-center justify-center w-14 h-14 bg-white/5 border border-white/10 rounded-full hover:bg-[#e34717] hover:border-[#e34717] hover:scale-110 transition-all duration-300">
               <Instagram size={20} className="text-white group-hover:text-white transition-colors" />
             </a>
-            <a href="https://www.youtube.com/@driveitlikestoleit" target="_blank" className="group relative flex items-center justify-center w-14 h-14 bg-white/5 border border-white/10 rounded-full hover:bg-[#e34717] hover:border-[#e34717] hover:scale-110 transition-all duration-300">
+            <a href="https://www.youtube.com/@joisdobairro" target="_blank" className="group relative flex items-center justify-center w-14 h-14 bg-white/5 border border-white/10 rounded-full hover:bg-[#e34717] hover:border-[#e34717] hover:scale-110 transition-all duration-300">
               <Youtube size={20} className="text-white group-hover:text-white transition-colors" />
             </a>
-            <a href="https://www.tiktok.com/@driveitlikestoleit" target="_blank" className="group relative flex items-center justify-center w-14 h-14 bg-white/5 border border-white/10 rounded-full hover:bg-[#e34717] hover:border-[#e34717] hover:scale-110 transition-all duration-300">
+            <a href="https://www.tiktok.com/@joisdobairro" target="_blank" className="group relative flex items-center justify-center w-14 h-14 bg-white/5 border border-white/10 rounded-full hover:bg-[#e34717] hover:border-[#e34717] hover:scale-110 transition-all duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={20}
@@ -108,11 +108,11 @@ const Footer: React.FC = () => {
 
         {/* Final Copyright Tag */}
         <div className="w-full pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 opacity-60 text-[9px] font-black tracking-[0.3em] uppercase">
-          <span className="text-zinc-500">REAL UNDERGROUND © {new Date().getFullYear()}</span>
+          <span className="text-zinc-500">JOIAS DO BAIRRO © {new Date().getFullYear()}</span>
           <div className="flex items-center gap-3">
-            <span className="text-zinc-500">Feito no asfalto</span>
+            <span className="text-zinc-500">Feito com cuidado</span>
             <span className="w-1 h-1 rounded-full bg-[#e34717]"></span>
-            <span className="text-[#e34717]">Puro Vandalismo</span>
+            <span className="text-[#e34717]">Do Bairro pra você</span>
           </div>
         </div>
       </div>

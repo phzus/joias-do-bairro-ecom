@@ -47,12 +47,12 @@ const ShippingPage: React.FC = () => (
         Promoções de frete grátis, quando disponíveis, são comunicadas via
         Instagram{' '}
         <a
-          href="https://instagram.com/driveitlikestoleit"
+          href="https://instagram.com/joisdobairro"
           target="_blank"
           rel="noreferrer"
           className="text-[#e34717] hover:underline"
         >
-          @driveitlikestoleit
+          @joisdobairro
         </a>{' '}
         e aplicadas automaticamente no carrinho.
       </p>

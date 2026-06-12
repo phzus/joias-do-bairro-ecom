@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "REAL UNDERGROUND | Premium Streetwear",
-  description: "Premium streetwear archive. Drive it like you stole it.",
+  title: "Joias do Bairro",
+  description: "Drop #001 disponível.",
 };
 
 export default function RootLayout({
