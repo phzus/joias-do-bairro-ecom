@@ -40,12 +40,6 @@ Thumbs.db
 # Medusa static files (gerados em runtime)
 backend/static/uploads/
 
-# Asset files — hospedados em S3 em produção, em backend/static/ localmente
-storefront/public/hero.mp4
-storefront/public/hero.webm
-storefront/public/banner.mp4
-storefront/public/logo-joias.svg
-
 # Package lock files
 storefront/package-lock.json
 
