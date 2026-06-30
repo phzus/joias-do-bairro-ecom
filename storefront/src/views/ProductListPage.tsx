@@ -313,8 +313,8 @@ const ProductListPage: React.FC = () => {
                 transformOrigin: 'center center',
               }}
             >
-              <source src={process.env.NEXT_PUBLIC_HERO_VIDEO_WEBM} type="video/webm" />
-              <source src={process.env.NEXT_PUBLIC_HERO_VIDEO_MP4} type="video/mp4" />
+              <source src="/hero.webm" type="video/webm" />
+              <source src="/hero.mp4" type="video/mp4" />
             </video>
           </div>
 

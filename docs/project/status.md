@@ -14,7 +14,7 @@
 | 1 | Estrutura do repositório e docs | ✅ Concluído | 2026-06-10 |
 | 2 | Código base importado (Medusa + Storefront) | ✅ Concluído | 2026-06-10 |
 | 3 | Identidade visual — layout da Joias do Bairro | 🔄 Em progresso | — |
-| 4 | Instalação de dependências e primeiro boot local | ⬜ Pendente | — |
+| 4 | Instalação de dependências e primeiro boot local | ✅ Concluído | 2026-06-12 |
 | 5 | Configuração SuperFrete (conta da Joias do Bairro) | ⬜ Pendente | — |
 | 6 | Seed inicial com produtos da loja | ⬜ Pendente | — |
 | 7 | Configurar infraestrutura de produção (VPS + Traefik) | ⬜ Pendente | — |
@@ -32,6 +32,8 @@ _Nenhum bloqueio identificado._
 
 ## Concluído Recentemente
 
+- **Fix vídeo da hero no deploy Vercel (2026-06-28):** a hero não exibia o vídeo de fundo em produção. Causa raiz: o `<source>` lia `process.env.NEXT_PUBLIC_HERO_VIDEO_*`, que são injetadas em build-time e não existiam na Vercel (`.env.local` é gitignored). Correção: referência por caminho literal `/hero.webm` e `/hero.mp4` — arquivos em `public/` (commitados) sempre entram no deploy, sem env var nem config manual na Vercel ([ProductListPage.tsx](../../storefront/src/views/ProductListPage.tsx)). Nota: importar mídia como módulo (`import x from '@/assets/x.mp4'`) **não** funciona no Turbopack/Next 16 sem loader customizado.
+- **Primeiro boot local concluído (2026-06-12):** migrações aplicadas (`medusa db:migrate`), seed inicial executado (região, sales channel, publishable key, produtos demo), usuário admin criado, `storefront/.env.local` criado com a publishable key. Backend (`:9000`), Admin (`:9000/app`) e storefront (`:3000`) sobem e o storefront consome o `/store/products` com sucesso. Postgres/Redis via Docker (`jdb-postgres`, `jdb-redis`).
 - Correção de UI: vídeo do hero agora cobre toda a seção (`object`-cover via `h-full w-auto max-w-none`); causa raiz era o `max-width: 100%` do Preflight do Tailwind v4 travando a largura do vídeo na largura da tela ([ProductListPage.tsx](../../storefront/src/views/ProductListPage.tsx))
 - Repositório Git inicializado
 - Pasta `docs/` criada com estrutura de segundo cérebro
