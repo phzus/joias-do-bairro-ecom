@@ -71,7 +71,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ isOpen, onClose }) => {
                   <div className="text-[9px] font-bold uppercase tracking-[0.4em] text-zinc-600 mb-2">
                     Conta
                   </div>
-                  <div className="text-2xl font-black uppercase tracking-tighter text-white group-hover:text-[#e34717] transition-colors">
+                  <div className="text-2xl font-black uppercase tracking-tighter text-white group-hover:text-[#8b1e2f] transition-colors">
                     {customer.first_name || 'Você'}
                   </div>
                   <div className="text-[10px] font-medium text-zinc-500 mt-1 normal-case tracking-normal">
@@ -82,7 +82,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ isOpen, onClose }) => {
                   <Link
                     to="/conta"
                     onClick={closeAndNavigate}
-                    className="flex-1 flex items-center justify-center gap-2 py-3 text-[9px] font-bold uppercase tracking-widest bg-white text-black hover:bg-[#e34717] hover:text-white transition-all"
+                    className="flex-1 flex items-center justify-center gap-2 py-3 text-[9px] font-bold uppercase tracking-widest bg-white text-black hover:bg-[#8b1e2f] hover:text-white transition-all"
                   >
                     <User size={12} />
                     Minha conta
@@ -110,7 +110,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ isOpen, onClose }) => {
                 <Link
                   to="/conta"
                   onClick={closeAndNavigate}
-                  className="w-full inline-flex items-center justify-center gap-2 py-4 bg-[#e34717] text-white text-[9px] font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all"
+                  className="w-full inline-flex items-center justify-center gap-2 py-4 bg-[#8b1e2f] text-white text-[9px] font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all"
                 >
                   <User size={12} />
                   Entrar / Cadastrar
@@ -129,7 +129,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ isOpen, onClose }) => {
                 <Link
                   to="/"
                   onClick={closeAndNavigate}
-                  className="text-2xl font-black uppercase tracking-tighter text-white hover:text-[#e34717] transition-colors"
+                  className="text-2xl font-black uppercase tracking-tighter text-white hover:text-[#8b1e2f] transition-colors"
                 >
                   Todos os produtos
                 </Link>
@@ -144,7 +144,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ isOpen, onClose }) => {
                       <Link
                         to={`/categoria/${cat.handle}`}
                         onClick={closeAndNavigate}
-                        className="text-2xl font-black uppercase tracking-tighter text-white hover:text-[#e34717] transition-colors flex-1"
+                        className="text-2xl font-black uppercase tracking-tighter text-white hover:text-[#8b1e2f] transition-colors flex-1"
                       >
                         {cat.name}
                       </Link>
@@ -157,7 +157,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ isOpen, onClose }) => {
                           <ChevronDown
                             size={16}
                             className={`transition-transform duration-300 ${
-                              isOpen ? 'rotate-180 text-[#e34717]' : ''
+                              isOpen ? 'rotate-180 text-[#8b1e2f]' : ''
                             }`}
                           />
                         </button>
@@ -171,7 +171,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ isOpen, onClose }) => {
                           exit={{ height: 0, opacity: 0 }}
                           className="overflow-hidden"
                         >
-                          <div className="flex flex-col gap-3 pl-4 border-l-2 border-[#e34717]/30">
+                          <div className="flex flex-col gap-3 pl-4 border-l-2 border-[#8b1e2f]/30">
                             {cat.category_children!.map((sub) => (
                               <Link
                                 key={sub.id}
@@ -180,7 +180,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ isOpen, onClose }) => {
                                 className="text-sm font-black uppercase tracking-tighter text-zinc-500 hover:text-white flex items-center justify-between"
                               >
                                 {sub.name}
-                                <ArrowRight size={12} className="text-[#e34717]/40" />
+                                <ArrowRight size={12} className="text-[#8b1e2f]/40" />
                               </Link>
                             ))}
                           </div>
@@ -208,7 +208,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ isOpen, onClose }) => {
                   <ShoppingBag size={14} />
                   Sacola
                 </span>
-                <span className="text-[#e34717]">{totalItems}</span>
+                <span className="text-[#8b1e2f]">{totalItems}</span>
               </Link>
               <Link
                 to="/rastrear"

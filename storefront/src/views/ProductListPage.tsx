@@ -32,21 +32,21 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ title, subtitle, highligh
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="inline-flex items-center gap-2 bg-[#e34717]/10 border border-[#e34717]/20 rounded-full px-4 py-1.5 mb-5"
+        className="inline-flex items-center gap-2 bg-[#8b1e2f]/10 border border-[#8b1e2f]/20 rounded-full px-4 py-1.5 mb-5"
       >
-        <span className="w-2 h-2 rounded-full bg-[#e34717] animate-pulse" />
-        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#e34717]">
+        <span className="w-2 h-2 rounded-full bg-[#8b1e2f] animate-pulse" />
+        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#8b1e2f]">
           Compre agora
         </span>
       </motion.div>
     )}
-    <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#e34717] mb-3">
+    <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#8b1e2f] mb-3">
       {subtitle}
     </p>
     <h2 className={`font-black uppercase tracking-tight text-white leading-none ${highlighted ? 'text-4xl md:text-6xl' : 'text-3xl md:text-5xl'}`}>
       {title}
     </h2>
-    <div className={`mt-4 h-px bg-[#e34717]/40 ${highlighted ? 'w-24' : 'w-16'}`} />
+    <div className={`mt-4 h-px bg-[#8b1e2f]/40 ${highlighted ? 'w-24' : 'w-16'}`} />
     {highlighted && (
       <p className="mt-4 text-xs md:text-sm text-zinc-500 max-w-lg">
         Edição limitada, qualidade premium. Joias do Bairro.
@@ -73,7 +73,7 @@ const StickerSection: React.FC<{ category: HttpTypes.StoreProductCategory, categ
 
   return (
     <section id={`category-${category.handle}`} className="relative">
-      <div className="absolute -inset-x-4 -inset-y-8 md:-inset-x-6 md:-inset-y-12 bg-linear-to-b from-[#e34717]/3 via-transparent to-transparent rounded-3xl pointer-events-none" />
+      <div className="absolute -inset-x-4 -inset-y-8 md:-inset-x-6 md:-inset-y-12 bg-linear-to-b from-[#8b1e2f]/3 via-transparent to-transparent rounded-3xl pointer-events-none" />
       <div className="relative">
         <SectionHeader
           title={category.name}
@@ -97,14 +97,14 @@ const StickerSection: React.FC<{ category: HttpTypes.StoreProductCategory, categ
             <>
               <button
                 onClick={scrollPrev}
-                className="absolute left-2 top-[40%] -translate-y-1/2 bg-black/50 backdrop-blur-md p-2 rounded-full border border-white/10 text-white hover:bg-[#e34717] transition-colors z-10"
+                className="absolute left-2 top-[40%] -translate-y-1/2 bg-black/50 backdrop-blur-md p-2 rounded-full border border-white/10 text-white hover:bg-[#8b1e2f] transition-colors z-10"
                 aria-label="Anterior"
               >
                 <ChevronLeft size={20} />
               </button>
               <button
                 onClick={scrollNext}
-                className="absolute right-2 top-[40%] -translate-y-1/2 bg-black/50 backdrop-blur-md p-2 rounded-full border border-white/10 text-white hover:bg-[#e34717] transition-colors z-10"
+                className="absolute right-2 top-[40%] -translate-y-1/2 bg-black/50 backdrop-blur-md p-2 rounded-full border border-white/10 text-white hover:bg-[#8b1e2f] transition-colors z-10"
                 aria-label="Próximo"
               >
                 <ChevronRight size={20} />
@@ -374,14 +374,14 @@ const ProductListPage: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6 py-16 md:py-24 relative z-10 space-y-16 md:space-y-24">
           {(loading || categoriesLoading) && (
             <div className="flex items-center justify-center py-32">
-              <Loader2 size={32} className="animate-spin text-[#e34717]" />
+              <Loader2 size={32} className="animate-spin text-[#8b1e2f]" />
               <span className="ml-4 text-zinc-500 text-xs uppercase tracking-widest font-bold">Carregando Arquivo...</span>
             </div>
           )}
 
           {error && (
             <div className="flex flex-col items-center justify-center py-32 text-center">
-              <p className="text-[#e34717] text-sm font-bold uppercase tracking-widest mb-4">Erro do Sistema</p>
+              <p className="text-[#8b1e2f] text-sm font-bold uppercase tracking-widest mb-4">Erro do Sistema</p>
               <p className="text-zinc-600 text-xs">{error}</p>
             </div>
           )}

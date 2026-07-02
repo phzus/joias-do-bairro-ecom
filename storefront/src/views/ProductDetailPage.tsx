@@ -117,7 +117,7 @@ const ProductDetailPage: React.FC = () => {
   if (loading) {
     return (
       <div className="bg-[#050505] min-h-screen text-white flex items-center justify-center">
-        <Loader2 size={32} className="animate-spin text-[#e34717]" />
+        <Loader2 size={32} className="animate-spin text-[#8b1e2f]" />
         <span className="ml-4 text-zinc-500 text-xs uppercase tracking-widest font-bold">Carregando...</span>
       </div>
     );
@@ -126,7 +126,7 @@ const ProductDetailPage: React.FC = () => {
   if (error || !product) {
     return (
       <div className="bg-[#050505] min-h-screen text-white flex flex-col items-center justify-center">
-        <p className="text-[#e34717] text-lg font-black uppercase tracking-widest mb-6">Produto Não Encontrado</p>
+        <p className="text-[#8b1e2f] text-lg font-black uppercase tracking-widest mb-6">Produto Não Encontrado</p>
         <Link to="/" className="text-zinc-500 text-xs uppercase tracking-widest hover:text-white transition-colors">
           Voltar para a stuff
         </Link>
@@ -172,7 +172,7 @@ const ProductDetailPage: React.FC = () => {
                     exit={{ opacity: 0 }}
                     className="absolute inset-0 z-50 bg-black/90 flex flex-col items-center justify-center text-center p-6 md:p-12"
                   >
-                    <RefreshCw size={48} className="text-[#e34717] animate-spin mb-6 md:mb-8" />
+                    <RefreshCw size={48} className="text-[#8b1e2f] animate-spin mb-6 md:mb-8" />
                     <h3 className="text-2xl md:text-3xl font-black tracking-tighter uppercase mb-2 md:mb-4">Ajustando Nano Banana...</h3>
                     <p className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">Aplicando texturas na sua foto</p>
                   </motion.div>
@@ -180,7 +180,7 @@ const ProductDetailPage: React.FC = () => {
               </AnimatePresence>
 
               {iaPreviewUrl && (
-                <div className="absolute top-4 right-4 md:top-8 md:right-8 z-30 bg-[#e34717] px-3 py-1.5 md:px-4 md:py-2 flex items-center gap-2 shadow-xl">
+                <div className="absolute top-4 right-4 md:top-8 md:right-8 z-30 bg-[#8b1e2f] px-3 py-1.5 md:px-4 md:py-2 flex items-center gap-2 shadow-xl">
                   <Zap size={12} className="fill-white" />
                   <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest">Modo Pré-visualização Nano</span>
                 </div>
@@ -194,8 +194,8 @@ const ProductDetailPage: React.FC = () => {
                     className="absolute inset-0 z-40 bg-black/80 flex items-center justify-center p-6 md:p-12 text-center"
                   >
                     <div className="max-w-md">
-                      <ShieldAlert className="mx-auto mb-6 md:mb-8 text-[#e34717]" size={32} />
-                      <h4 className="text-[10px] font-black uppercase tracking-[0.5em] text-[#e34717] mb-4 md:mb-8">Lore Decodificado</h4>
+                      <ShieldAlert className="mx-auto mb-6 md:mb-8 text-[#8b1e2f]" size={32} />
+                      <h4 className="text-[10px] font-black uppercase tracking-[0.5em] text-[#8b1e2f] mb-4 md:mb-8">Lore Decodificado</h4>
                       <p className="text-xl md:text-2xl lg:text-3xl font-black tracking-tighter leading-tight uppercase mb-8 md:mb-12">
                         {lore}
                       </p>
@@ -224,7 +224,7 @@ const ProductDetailPage: React.FC = () => {
                 />
                 <button
                   onClick={() => fileInputRef.current?.click()}
-                  className="w-20 h-28 md:w-24 md:h-32 flex-shrink-0 border border-dashed border-zinc-800 flex flex-col items-center justify-center gap-3 md:gap-4 hover:border-[#e34717] hover:bg-[#e34717]/5 transition-all group"
+                  className="w-20 h-28 md:w-24 md:h-32 flex-shrink-0 border border-dashed border-zinc-800 flex flex-col items-center justify-center gap-3 md:gap-4 hover:border-[#8b1e2f] hover:bg-[#8b1e2f]/5 transition-all group"
                   aria-label="Envie foto para provador virtual"
                   tabIndex={0}
                 >
@@ -236,7 +236,7 @@ const ProductDetailPage: React.FC = () => {
                 <button
                   key={img.id || idx}
                   onClick={() => { setSelectedImage(idx); setIaPreviewUrl(null); }}
-                  className={`relative w-20 h-28 md:w-24 md:h-32 flex-shrink-0 border transition-all duration-500 overflow-hidden ${selectedImage === idx && !iaPreviewUrl ? 'border-[#e34717] scale-105 z-10' : 'border-zinc-900 opacity-40 hover:opacity-100'}`}
+                  className={`relative w-20 h-28 md:w-24 md:h-32 flex-shrink-0 border transition-all duration-500 overflow-hidden ${selectedImage === idx && !iaPreviewUrl ? 'border-[#8b1e2f] scale-105 z-10' : 'border-zinc-900 opacity-40 hover:opacity-100'}`}
                   aria-label={`Ver imagem ${idx + 1}`}
                   tabIndex={0}
                 >
@@ -249,7 +249,7 @@ const ProductDetailPage: React.FC = () => {
           {/* Product Data & Config */}
           <div className="lg:col-span-6 flex flex-col">
             <div className="mb-8 md:mb-10">
-              <span className="text-[#e34717] text-[9px] md:text-[10px] font-black uppercase tracking-[0.5em] mb-4 block">
+              <span className="text-[#8b1e2f] text-[9px] md:text-[10px] font-black uppercase tracking-[0.5em] mb-4 block">
                 {product.categories?.[0]?.name ?? 'Série Arquivo'}
               </span>
               <h1 className="lg:max-w-lg text-2xl md:text-8xl lg:text-5xl font-black tracking-tighter mb-6 md:mb-8 uppercase leading-[1]">
@@ -259,7 +259,7 @@ const ProductDetailPage: React.FC = () => {
               <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-white/5 pb-6 md:pb-8 gap-6">
                 {displayPrice && (
                   <div className="flex items-baseline gap-2">
-                    <p className="text-4xl md:text-6xl lg:text-4xl font-black tracking-tighter text-[#e34717] leading-none">
+                    <p className="text-4xl md:text-6xl lg:text-4xl font-black tracking-tighter text-[#8b1e2f] leading-none">
                       {formatPrice(displayPrice.amount, displayPrice.currencyCode)}
                     </p>
                   </div>
@@ -303,8 +303,8 @@ const ProductDetailPage: React.FC = () => {
                 className={`w-full py-6 md:py-8 flex items-center justify-center gap-4 md:gap-6 font-black uppercase text-[10px] md:text-xs tracking-[0.5em] md:tracking-[0.6em] transition-all duration-500 ${!selectedVariant
                   ? 'bg-zinc-900 text-zinc-700 cursor-not-allowed'
                   : isAdding
-                    ? 'bg-[#e34717] text-white animate-pulse'
-                    : 'bg-white text-black hover:bg-[#e34717] hover:text-white shadow-2xl scale-100 active:scale-95'
+                    ? 'bg-[#8b1e2f] text-white animate-pulse'
+                    : 'bg-white text-black hover:bg-[#8b1e2f] hover:text-white shadow-2xl scale-100 active:scale-95'
                   }`}
                 aria-label={isAdding ? 'Adicionando à sacola' : 'Adicionar à sacola'}
                 tabIndex={0}
@@ -317,7 +317,7 @@ const ProductDetailPage: React.FC = () => {
               <div className="bg-zinc-950 p-6 md:p-10 border border-white/5 space-y-6">
                 <div className="flex justify-between items-center text-[9px] font-black uppercase tracking-[0.5em] text-zinc-500">
                   <span>Detalhes do Produto</span>
-                  <Zap size={14} className="text-[#e34717]" />
+                  <Zap size={14} className="text-[#8b1e2f]" />
                 </div>
                 {product.description && (
                   <p className="text-xs text-zinc-500 leading-relaxed font-medium pt-6 border-t border-white/10">
@@ -326,7 +326,7 @@ const ProductDetailPage: React.FC = () => {
                 )}
                 {product.material && (
                   <div className="flex items-center gap-4 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
-                    <Zap size={18} className="text-[#e34717]" />
+                    <Zap size={18} className="text-[#8b1e2f]" />
                     <span className="text-zinc-400">{product.material}</span>
                   </div>
                 )}

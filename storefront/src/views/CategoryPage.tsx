@@ -70,7 +70,7 @@ const CategoryPage: React.FC = () => {
   if (loading) {
     return (
       <div className="min-h-[80vh] flex items-center justify-center bg-[#0a0a0a]">
-        <Loader2 size={32} className="animate-spin text-[#e34717]" />
+        <Loader2 size={32} className="animate-spin text-[#8b1e2f]" />
       </div>
     )
   }
@@ -84,7 +84,7 @@ const CategoryPage: React.FC = () => {
           </h1>
           <Link
             to="/"
-            className="inline-flex items-center gap-3 px-12 py-5 bg-white text-black text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#e34717] hover:text-white transition-all"
+            className="inline-flex items-center gap-3 px-12 py-5 bg-white text-black text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#8b1e2f] hover:text-white transition-all"
           >
             Voltar à loja
           </Link>

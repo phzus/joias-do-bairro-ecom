@@ -93,7 +93,7 @@ const ShippingPage: React.FC = () => (
           href="https://instagram.com/joisdobairro"
           target="_blank"
           rel="noreferrer"
-          className="text-[#e34717] hover:underline"
+          className="text-[#8b1e2f] hover:underline"
         >
           @joisdobairro
         </a>
@@ -109,7 +109,7 @@ const ShippingPage: React.FC = () => (
           href="https://instagram.com/joisdobairro"
           target="_blank"
           rel="noreferrer"
-          className="text-[#e34717] hover:underline"
+          className="text-[#8b1e2f] hover:underline"
         >
           @joisdobairro
         </a>{' '}

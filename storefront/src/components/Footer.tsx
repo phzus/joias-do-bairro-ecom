@@ -35,13 +35,13 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="flex gap-4 md:gap-6 justify-center">
-            <a href="https://www.instagram.com/joisdobairro" target="_blank" className="group relative flex items-center justify-center w-14 h-14 bg-white/5 border border-white/10 rounded-full hover:bg-[#e34717] hover:border-[#e34717] hover:scale-110 transition-all duration-300">
+            <a href="https://www.instagram.com/joisdobairro" target="_blank" className="group relative flex items-center justify-center w-14 h-14 bg-white/5 border border-white/10 rounded-full hover:bg-[#8b1e2f] hover:border-[#8b1e2f] hover:scale-110 transition-all duration-300">
               <Instagram size={20} className="text-white group-hover:text-white transition-colors" />
             </a>
-            <a href="https://www.youtube.com/@joisdobairro" target="_blank" className="group relative flex items-center justify-center w-14 h-14 bg-white/5 border border-white/10 rounded-full hover:bg-[#e34717] hover:border-[#e34717] hover:scale-110 transition-all duration-300">
+            <a href="https://www.youtube.com/@joisdobairro" target="_blank" className="group relative flex items-center justify-center w-14 h-14 bg-white/5 border border-white/10 rounded-full hover:bg-[#8b1e2f] hover:border-[#8b1e2f] hover:scale-110 transition-all duration-300">
               <Youtube size={20} className="text-white group-hover:text-white transition-colors" />
             </a>
-            <a href="https://www.tiktok.com/@joisdobairro" target="_blank" className="group relative flex items-center justify-center w-14 h-14 bg-white/5 border border-white/10 rounded-full hover:bg-[#e34717] hover:border-[#e34717] hover:scale-110 transition-all duration-300">
+            <a href="https://www.tiktok.com/@joisdobairro" target="_blank" className="group relative flex items-center justify-center w-14 h-14 bg-white/5 border border-white/10 rounded-full hover:bg-[#8b1e2f] hover:border-[#8b1e2f] hover:scale-110 transition-all duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={20}
@@ -60,44 +60,44 @@ const Footer: React.FC = () => {
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-10">
           <Link
             to="/rastrear"
-            className="flex items-center gap-2 text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#e34717] transition-colors"
+            className="flex items-center gap-2 text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#8b1e2f] transition-colors"
           >
             <Package size={12} />
             Rastrear Pedido
           </Link>
           <Link
             to="/conta"
-            className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#e34717] transition-colors"
+            className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#8b1e2f] transition-colors"
           >
             Minha Conta
           </Link>
           <Link
             to="/entrega"
-            className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#e34717] transition-colors"
+            className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#8b1e2f] transition-colors"
           >
             Prazos e Envios
           </Link>
           <Link
             to="/trocas-e-devolucoes"
-            className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#e34717] transition-colors"
+            className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#8b1e2f] transition-colors"
           >
             Trocas
           </Link>
           <Link
             to="/politica-de-privacidade"
-            className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#e34717] transition-colors"
+            className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#8b1e2f] transition-colors"
           >
             Privacidade
           </Link>
           <Link
             to="/termos-de-uso"
-            className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#e34717] transition-colors"
+            className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#8b1e2f] transition-colors"
           >
             Termos
           </Link>
           <Link
             to="/sobre"
-            className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#e34717] transition-colors"
+            className="text-[10px] font-black tracking-[0.3em] uppercase text-zinc-400 hover:text-[#8b1e2f] transition-colors"
           >
             Sobre
           </Link>
@@ -108,7 +108,7 @@ const Footer: React.FC = () => {
           onClick={scrollToTop}
           className="group flex flex-col items-center gap-3 mb-16"
         >
-          <div className="w-px h-12 bg-white/20 group-hover:h-16 group-hover:bg-[#e34717] transition-all duration-300"></div>
+          <div className="w-px h-12 bg-white/20 group-hover:h-16 group-hover:bg-[#8b1e2f] transition-all duration-300"></div>
           <span className="text-[10px] font-black tracking-[0.4em] uppercase text-zinc-400 group-hover:text-white transition-colors">Voltar ao Topo</span>
         </button>
 
@@ -117,8 +117,8 @@ const Footer: React.FC = () => {
           <span className="text-zinc-500">JOIAS DO BAIRRO © {new Date().getFullYear()}</span>
           <div className="flex items-center gap-3">
             <span className="text-zinc-500">Feito com cuidado</span>
-            <span className="w-1 h-1 rounded-full bg-[#e34717]"></span>
-            <span className="text-[#e34717]">Do Bairro pra você</span>
+            <span className="w-1 h-1 rounded-full bg-[#8b1e2f]"></span>
+            <span className="text-[#8b1e2f]">Do Bairro pra você</span>
           </div>
         </div>
       </div>

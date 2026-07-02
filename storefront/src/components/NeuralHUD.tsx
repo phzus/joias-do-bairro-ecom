@@ -73,10 +73,10 @@ const NeuralHUD: React.FC<NeuralHUDProps> = ({ onVibeChange }) => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-10 left-10 z-[110] bg-black border border-white/20 p-4 hover:border-[#e34717] group transition-all"
+        className="fixed bottom-10 left-10 z-[110] bg-black border border-white/20 p-4 hover:border-[#8b1e2f] group transition-all"
       >
         <div className="flex items-center gap-3">
-          <Cpu size={20} className="text-[#e34717] group-hover:animate-pulse" />
+          <Cpu size={20} className="text-[#8b1e2f] group-hover:animate-pulse" />
           <span className="text-[10px] font-black uppercase tracking-[0.3em] hidden md:block">Neural Link</span>
         </div>
       </button>
@@ -99,7 +99,7 @@ const NeuralHUD: React.FC<NeuralHUDProps> = ({ onVibeChange }) => {
               <div className="border border-white/5 p-8 relative z-10 bg-zinc-950">
                 <div className="flex justify-between items-start mb-12">
                   <div className="flex items-center gap-4">
-                    <Terminal size={24} className="text-[#e34717]" />
+                    <Terminal size={24} className="text-[#8b1e2f]" />
                     <div>
                       <h2 className="text-xl font-black italic uppercase tracking-tighter">Vibe Command HUD</h2>
                       <p className="text-[8px] font-mono text-zinc-500 uppercase tracking-widest">User_Interface_v3.1 // AI_Assisted_Style</p>
@@ -110,7 +110,7 @@ const NeuralHUD: React.FC<NeuralHUDProps> = ({ onVibeChange }) => {
 
                 <div className="bg-black/50 p-6 mb-8 font-mono text-[10px] space-y-2 h-40 overflow-y-auto border border-white/5 scrollbar-hide">
                   {history.map((line, i) => (
-                    <div key={i} className={line.startsWith('>') ? 'text-[#e34717]' : 'text-zinc-500'}>{line}</div>
+                    <div key={i} className={line.startsWith('>') ? 'text-[#8b1e2f]' : 'text-zinc-500'}>{line}</div>
                   ))}
                   {isLoading && <div className="animate-pulse text-white">RECONFIGURING ARCHIVE PARAMETERS...</div>}
                 </div>
@@ -123,13 +123,13 @@ const NeuralHUD: React.FC<NeuralHUDProps> = ({ onVibeChange }) => {
                     onChange={(e) => setPrompt(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && processVibe()}
                     placeholder="DESCRIBE THE VIBE (EX: TECHWEAR TOKYO NIGHT)..."
-                    className="w-full bg-transparent border-b-2 border-white/10 py-4 font-mono text-sm focus:outline-none focus:border-[#e34717] transition-all uppercase placeholder:text-zinc-800"
+                    className="w-full bg-transparent border-b-2 border-white/10 py-4 font-mono text-sm focus:outline-none focus:border-[#8b1e2f] transition-all uppercase placeholder:text-zinc-800"
                     disabled={isLoading}
                   />
                   <button
                     onClick={processVibe}
                     disabled={isLoading}
-                    className="absolute right-0 bottom-4 text-[#e34717] hover:text-white transition-colors"
+                    className="absolute right-0 bottom-4 text-[#8b1e2f] hover:text-white transition-colors"
                   >
                     <Zap size={20} />
                   </button>

@@ -130,9 +130,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, locked = fals
               className="flex flex-col items-center gap-3"
             >
               <div className="relative">
-                <div className="absolute inset-0 rounded-full bg-[#e34717]/20 blur-xl scale-150" />
-                <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full border border-[#e34717]/30 bg-black/60 flex items-center justify-center">
-                  <Lock size={24} className="text-[#e34717]/80" strokeWidth={2.5} />
+                <div className="absolute inset-0 rounded-full bg-[#8b1e2f]/20 blur-xl scale-150" />
+                <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full border border-[#8b1e2f]/30 bg-black/60 flex items-center justify-center">
+                  <Lock size={24} className="text-[#8b1e2f]/80" strokeWidth={2.5} />
                 </div>
               </div>
               <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">
@@ -160,7 +160,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, locked = fals
 
         {!locked && productInfo.hasDiscount && (
           <div className="absolute top-3 right-3 z-10">
-            <span className="inline-flex items-center bg-[#e34717] text-white text-[10px] md:text-xs font-black px-2 py-1 rounded-md shadow-lg">
+            <span className="inline-flex items-center bg-[#8b1e2f] text-white text-[10px] md:text-xs font-black px-2 py-1 rounded-md shadow-lg">
               -{productInfo.discountPercent}%
             </span>
           </div>
@@ -169,7 +169,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, locked = fals
         {!locked && (
           <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
             <div className="flex gap-2">
-              <span className="flex-1 inline-flex items-center justify-center gap-2 bg-[#e34717] hover:bg-[#c73d13] text-white text-[10px] md:text-xs font-bold uppercase tracking-wider py-2.5 px-4 rounded-md transition-colors">
+              <span className="flex-1 inline-flex items-center justify-center gap-2 bg-[#8b1e2f] hover:bg-[#c73d13] text-white text-[10px] md:text-xs font-bold uppercase tracking-wider py-2.5 px-4 rounded-md transition-colors">
                 <Eye size={14} />
                 Ver Detalhes
               </span>
@@ -180,7 +180,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, locked = fals
 
       <div className={`${featured ? 'p-4' : 'pt-4 pb-2'} flex flex-col gap-3`}>
         <div className="space-y-1.5">
-          <h3 className={`font-bold uppercase tracking-wide leading-tight transition-colors duration-300 line-clamp-2 ${locked ? 'text-zinc-600 text-sm' : ''} ${featured && !locked ? 'text-sm md:text-base text-white group-hover:text-[#e34717]' : ''} ${!featured && !locked ? 'text-sm text-zinc-200 group-hover:text-[#e34717]' : ''}`}>
+          <h3 className={`font-bold uppercase tracking-wide leading-tight transition-colors duration-300 line-clamp-2 ${locked ? 'text-zinc-600 text-sm' : ''} ${featured && !locked ? 'text-sm md:text-base text-white group-hover:text-[#8b1e2f]' : ''} ${!featured && !locked ? 'text-sm text-zinc-200 group-hover:text-[#8b1e2f]' : ''}`}>
             {product.title}
           </h3>
           
@@ -220,7 +220,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, locked = fals
                 {[...Array(5)].map((_, i) => (
                   <div
                     key={i}
-                    className={`w-3 h-3 rounded-full border border-zinc-800 ${i < 4 ? 'bg-[#e34717]' : 'bg-zinc-700'}`}
+                    className={`w-3 h-3 rounded-full border border-zinc-800 ${i < 4 ? 'bg-[#8b1e2f]' : 'bg-zinc-700'}`}
                   />
                 ))}
               </div>
@@ -243,7 +243,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, locked = fals
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-20px" }}
       transition={{ duration: 0.5, delay: index * 0.04 }}
-      className={`relative flex flex-col h-full ${locked ? 'cursor-not-allowed' : 'group cursor-pointer'} ${featured && !locked ? 'bg-zinc-900/30 rounded-xl ring-1 ring-white/5 hover:ring-[#e34717]/40 hover:bg-zinc-900/50 transition-all duration-500 overflow-hidden' : ''}`}
+      className={`relative flex flex-col h-full ${locked ? 'cursor-not-allowed' : 'group cursor-pointer'} ${featured && !locked ? 'bg-zinc-900/30 rounded-xl ring-1 ring-white/5 hover:ring-[#8b1e2f]/40 hover:bg-zinc-900/50 transition-all duration-500 overflow-hidden' : ''}`}
     >
       {locked ? (
         <div className="block select-none" aria-label={`${product.title} — locked`}>

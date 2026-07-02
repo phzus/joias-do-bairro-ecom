@@ -141,7 +141,7 @@ const ShippingQuote: React.FC<Props> = ({
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-3">
-        <Truck size={14} className="text-[#e34717]" />
+        <Truck size={14} className="text-[#8b1e2f]" />
         <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">
           {label}
         </span>
@@ -160,20 +160,20 @@ const ShippingQuote: React.FC<Props> = ({
               onChange={(e) => handleCepInput(e.target.value)}
               maxLength={9}
               placeholder="00000-000"
-              className="w-full bg-transparent border-b py-3 pr-8 text-sm font-medium text-white placeholder:text-zinc-800 border-zinc-800 focus:border-[#e34717] focus:outline-none transition-all"
+              className="w-full bg-transparent border-b py-3 pr-8 text-sm font-medium text-white placeholder:text-zinc-800 border-zinc-800 focus:border-[#8b1e2f] focus:outline-none transition-all"
               aria-label="CEP de entrega"
             />
             {loading && (
               <div className="absolute right-0 top-1/2 -translate-y-1/2">
-                <Loader2 size={14} className="text-[#e34717] animate-spin" />
+                <Loader2 size={14} className="text-[#8b1e2f] animate-spin" />
               </div>
             )}
           </div>
         </div>
       )}
 
-      {error && (
-        <div className="flex items-center gap-2 text-[#e34717] text-[10px] font-medium">
+      {error && showCepInput && (
+        <div className="flex items-center gap-2 text-[#8b1e2f] text-[10px] font-medium">
           <AlertCircle size={12} />
           {error}
         </div>
@@ -202,7 +202,7 @@ const ShippingQuote: React.FC<Props> = ({
                   onClick={() => onSelect && onSelect(opt, cep.replace(/\D/g, ''))}
                   className={`w-full text-left px-4 py-3 border transition-all rounded-sm flex items-center justify-between gap-4 ${
                     selected
-                      ? 'border-[#e34717] bg-[#e34717]/5'
+                      ? 'border-[#8b1e2f] bg-[#8b1e2f]/5'
                       : 'border-white/10 hover:border-white/20 bg-zinc-950'
                   }`}
                   aria-pressed={selected}
@@ -211,7 +211,7 @@ const ShippingQuote: React.FC<Props> = ({
                     <div
                       className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 ${
                         selected
-                          ? 'border-[#e34717] bg-[#e34717]'
+                          ? 'border-[#8b1e2f] bg-[#8b1e2f]'
                           : 'border-zinc-700'
                       }`}
                     >

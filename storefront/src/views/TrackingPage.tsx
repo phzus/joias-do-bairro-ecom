@@ -90,7 +90,7 @@ const TrackingPage: React.FC = () => {
     <div className="bg-[#0a0a0a] min-h-[80vh] text-white pt-12 pb-24">
       <div className="container mx-auto px-6 max-w-3xl">
         <div className="flex items-center gap-4 mb-12">
-          <div className="w-10 h-10 border border-white/10 flex items-center justify-center rounded-full text-[#e34717]">
+          <div className="w-10 h-10 border border-white/10 flex items-center justify-center rounded-full text-[#8b1e2f]">
             <Package size={18} />
           </div>
           <h1 className="text-4xl md:text-5xl font-light tracking-tighter">
@@ -108,13 +108,13 @@ const TrackingPage: React.FC = () => {
               value={code}
               onChange={(e) => setCode(e.target.value)}
               placeholder="Ex: BR123456789BR ou o ID do pedido"
-              className="flex-1 bg-transparent border-b py-4 text-sm font-medium text-white placeholder:text-zinc-800 border-zinc-800 focus:border-[#e34717] focus:outline-none transition-all"
+              className="flex-1 bg-transparent border-b py-4 text-sm font-medium text-white placeholder:text-zinc-800 border-zinc-800 focus:border-[#8b1e2f] focus:outline-none transition-all"
               aria-label="Código de rastreio"
             />
             <button
               type="submit"
               disabled={loading || !code.trim()}
-              className="px-8 py-4 bg-white text-black text-[10px] font-bold uppercase tracking-widest hover:bg-[#e34717] hover:text-white transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2"
+              className="px-8 py-4 bg-white text-black text-[10px] font-bold uppercase tracking-widest hover:bg-[#8b1e2f] hover:text-white transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2"
             >
               {loading ? (
                 <Loader2 size={14} className="animate-spin" />
@@ -133,7 +133,7 @@ const TrackingPage: React.FC = () => {
               initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="flex items-center gap-3 bg-[#e34717]/10 border border-[#e34717]/20 p-5 text-[#e34717] rounded-sm"
+              className="flex items-center gap-3 bg-[#8b1e2f]/10 border border-[#8b1e2f]/20 p-5 text-[#8b1e2f] rounded-sm"
             >
               <AlertCircle size={16} />
               <span className="text-sm">{error}</span>
@@ -188,7 +188,7 @@ const TrackingPage: React.FC = () => {
                         width: activeStep > 0 ? `${(activeStep / 3) * 100}%` : '0%',
                       }}
                       transition={{ duration: 0.8, ease: 'easeOut' }}
-                      className="h-full bg-[#e34717]"
+                      className="h-full bg-[#8b1e2f]"
                     />
                   </div>
                   <div className="grid grid-cols-4 gap-2 relative">
@@ -199,7 +199,7 @@ const TrackingPage: React.FC = () => {
                           <div
                             className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mb-3 transition-colors ${
                               reached
-                                ? 'border-[#e34717] bg-[#e34717]'
+                                ? 'border-[#8b1e2f] bg-[#8b1e2f]'
                                 : 'border-zinc-800 bg-[#0a0a0a]'
                             }`}
                           >

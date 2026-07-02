@@ -35,10 +35,10 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
                   aria-label={`Category: ${cat.name}`}
                   tabIndex={0}
                 >
-                  <span className={`w-1 h-1 bg-[#e34717] rounded-full transition-opacity duration-300 ${activeMenu === cat.id ? 'opacity-100' : 'opacity-0'}`} />
+                  <span className={`w-1 h-1 bg-[#8b1e2f] rounded-full transition-opacity duration-300 ${activeMenu === cat.id ? 'opacity-100' : 'opacity-0'}`} />
                   {cat.name}
                   {cat.category_children && cat.category_children.length > 0 && (
-                    <ChevronDown size={10} className={`transition-transform duration-500 ${activeMenu === cat.id ? 'rotate-180 text-[#e34717]' : 'text-zinc-800'}`} />
+                    <ChevronDown size={10} className={`transition-transform duration-500 ${activeMenu === cat.id ? 'rotate-180 text-[#8b1e2f]' : 'text-zinc-800'}`} />
                   )}
                 </button>
 
@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
                         </div>
 
                         <div className="relative z-10">
-                          <h4 className="text-[8px] font-black uppercase tracking-[0.6em] text-[#e34717] mb-8 pb-3 border-b border-white/5 flex items-center justify-between">
+                          <h4 className="text-[8px] font-black uppercase tracking-[0.6em] text-[#8b1e2f] mb-8 pb-3 border-b border-white/5 flex items-center justify-between">
                             Índice_Arquivo <span>0{catIdx + 1}</span>
                           </h4>
 
@@ -75,7 +75,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
                                   tabIndex={0}
                                   aria-label={sub.name}
                                 >
-                                  <ArrowRight size={12} className="mr-3 text-[#e34717] opacity-0 -ml-4 group-hover/item:opacity-100 group-hover/item:ml-0 transition-all" />
+                                  <ArrowRight size={12} className="mr-3 text-[#8b1e2f] opacity-0 -ml-4 group-hover/item:opacity-100 group-hover/item:ml-0 transition-all" />
                                   {sub.name}
                                 </Link>
                               </motion.div>
@@ -85,7 +85,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
                           <div className="mt-10 pt-6 border-t border-white/5">
                             <Link
                               to="/"
-                              className="block w-full text-center py-4 bg-white text-black text-[9px] font-black uppercase tracking-[0.4em] hover:bg-[#e34717] hover:text-white transition-all shadow-xl"
+                              className="block w-full text-center py-4 bg-white text-black text-[9px] font-black uppercase tracking-[0.4em] hover:bg-[#8b1e2f] hover:text-white transition-all shadow-xl"
                               tabIndex={0}
                               aria-label="Explorar todos os produtos"
                             >
@@ -100,8 +100,8 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
               </li>
             ))}
             <li className="h-full flex items-center">
-              <Link to="/" className="text-[10px] font-black uppercase tracking-[0.4em] text-[#e34717] hover:scale-110 transition-transform flex items-center gap-2" tabIndex={0} aria-label="Drops limitados">
-                <span className="w-2 h-2 bg-[#e34717] animate-pulse rounded-full" />
+              <Link to="/" className="text-[10px] font-black uppercase tracking-[0.4em] text-[#8b1e2f] hover:scale-110 transition-transform flex items-center gap-2" tabIndex={0} aria-label="Drops limitados">
+                <span className="w-2 h-2 bg-[#8b1e2f] animate-pulse rounded-full" />
                 Drop Limitado
               </Link>
             </li>
@@ -123,11 +123,11 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
                   aria-label={`Alternar subcategorias de ${cat.name}`}
                   tabIndex={0}
                 >
-                  <span className={`text-2xl font-black italic uppercase tracking-tighter transition-colors ${activeMenu === cat.id ? 'text-[#e34717]' : 'text-white'}`}>
+                  <span className={`text-2xl font-black italic uppercase tracking-tighter transition-colors ${activeMenu === cat.id ? 'text-[#8b1e2f]' : 'text-white'}`}>
                     {cat.name}
                   </span>
                   {cat.category_children && cat.category_children.length > 0 && (
-                    <ChevronDown size={20} className={`text-zinc-800 transition-transform duration-500 ${activeMenu === cat.id ? 'rotate-180 text-[#e34717]' : ''}`} />
+                    <ChevronDown size={20} className={`text-zinc-800 transition-transform duration-500 ${activeMenu === cat.id ? 'rotate-180 text-[#8b1e2f]' : ''}`} />
                   )}
                 </button>
 
@@ -139,7 +139,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden"
                     >
-                      <div className="flex flex-col space-y-5 pl-4 border-l-2 border-[#e34717]/30 py-2">
+                      <div className="flex flex-col space-y-5 pl-4 border-l-2 border-[#8b1e2f]/30 py-2">
                         {cat.category_children.map((sub) => (
                           <Link
                             key={sub.id}
@@ -150,7 +150,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
                             aria-label={sub.name}
                           >
                             {sub.name}
-                            <ArrowRight size={14} className="text-[#e34717]/30" />
+                            <ArrowRight size={14} className="text-[#8b1e2f]/30" />
                           </Link>
                         ))}
                       </div>
@@ -163,7 +163,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
             <Link
               to="/"
               onClick={onClose}
-              className="text-2xl font-black italic uppercase tracking-tighter text-[#e34717] animate-pulse"
+              className="text-2xl font-black italic uppercase tracking-tighter text-[#8b1e2f] animate-pulse"
               tabIndex={0}
               aria-label="Drops limitados"
             >
