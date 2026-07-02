@@ -25,10 +25,12 @@ module.exports = defineConfig({
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/payment-stripe",
-            id: "stripe",
+            resolve: "./src/modules/mercadopago/providers",
+            id: "mercadopago",
             options: {
-              apiKey: process.env.STRIPE_API_KEY,
+              accessToken: process.env.MP_ACCESS_TOKEN,
+              publicKey: process.env.MP_PUBLIC_KEY,
+              webhookSecret: process.env.MP_WEBHOOK_SECRET,
             },
           },
         ],

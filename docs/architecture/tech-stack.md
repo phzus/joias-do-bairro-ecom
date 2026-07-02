@@ -10,7 +10,7 @@
 | Runtime | Node.js | ≥20 | Requisito do Medusa.js | ADR-001 |
 | Package manager | pnpm | 10.28.2 | Eficiência de disco, rigor de dependências | — |
 | ORM | MikroORM (via Medusa DML) | bundled | Nativo ao Medusa v2 | — |
-| Pagamentos | Stripe | via `@medusajs/medusa/payment-stripe` | Integração nativa Medusa | — |
+| Pagamentos | Mercado Pago | `mercadopago` (npm) + provider custom | Gateway dominante no BR, suporta Pix/Boleto/parcelamento | [ADR-002](../decisions/002-mercadopago-como-gateway-de-pagamento.md) |
 | Frete | SuperFrete | módulo custom | Única transportadora integrada ao mercado BR | — |
 | File Storage | Local (dev) / S3-compatível (prod) | condicional via env | Flexibilidade dev/prod sem mudança de código | — |
 | Banco de dados | PostgreSQL | 16-alpine | Requisito do Medusa.js v2 | — |
@@ -25,7 +25,7 @@
 | UI Library | React | 19.2.3 | Padrão da indústria | — |
 | Estilização | Tailwind CSS | v4 | Utility-first, rápido para customizar | — |
 | SDK Medusa | `@medusajs/js-sdk` | 2.13.1 | Client oficial para a API do Medusa | — |
-| Pagamentos | Stripe (`@stripe/react-stripe-js`) | ^5.6.0 | Componentes prontos para checkout seguro | — |
+| Pagamentos | Mercado Pago JS SDK (`@mercadopago/sdk-js`) | latest | Tokenização de cartão no browser para Checkout Transparente | [ADR-002](../decisions/002-mercadopago-como-gateway-de-pagamento.md) |
 | Animações | Framer Motion + GSAP | ^12 / ^3.14 | Herdado do projeto de referência | — |
 | Smooth scroll | Lenis | ^1.3.17 | Herdado do projeto de referência | — |
 | Roteamento (SPA) | React Router DOM | ^7 | HashRouter dentro do Next.js App Router | — |

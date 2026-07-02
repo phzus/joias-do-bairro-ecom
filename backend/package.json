@@ -27,7 +27,9 @@
     "@medusajs/dashboard": "2.13.1",
     "@medusajs/draft-order": "2.13.1",
     "@medusajs/framework": "2.13.1",
-    "@medusajs/medusa": "2.13.1"
+    "@medusajs/medusa": "2.13.1",
+    "mercadopago": "^3.2.0",
+    "pg": "^8.22.0"
   },
   "devDependencies": {
     "@medusajs/test-utils": "2.13.1",
