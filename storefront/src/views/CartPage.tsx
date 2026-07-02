@@ -98,7 +98,7 @@ const CartPage: React.FC = () => {
   if (loading) {
     return (
       <div className="min-h-[80vh] flex items-center justify-center bg-[#0a0a0a]">
-        <Loader2 size={32} className="animate-spin text-[#8b1e2f]" />
+        <Loader2 size={32} className="animate-spin text-[#c8102e]" />
         <span className="ml-4 text-zinc-500 text-xs uppercase tracking-widest font-bold">Carregando Sacola...</span>
       </div>
     );
@@ -124,11 +124,11 @@ const CartPage: React.FC = () => {
         </p>
         <Link
           to="/"
-          className="px-12 py-5 bg-white text-black text-[10px] font-bold uppercase tracking-widest hover:bg-[#8b1e2f] hover:text-white transition-all shadow-xl group relative overflow-hidden"
+          className="px-12 py-5 bg-white text-black text-[10px] font-bold uppercase tracking-widest hover:bg-[#c8102e] hover:text-white transition-all shadow-xl group relative overflow-hidden"
           tabIndex={0}
           aria-label="Explore products"
         >
-          <span className="absolute inset-0 w-full h-full bg-[#8b1e2f] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+          <span className="absolute inset-0 w-full h-full bg-[#c8102e] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
           <span className="relative flex items-center gap-3">
             Explorar Peças <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </span>
@@ -196,7 +196,7 @@ const CartPage: React.FC = () => {
                         </div>
                         <button
                           onClick={() => handleRemoveItem(item.id)}
-                          className="w-6 h-6 flex items-center justify-center rounded-full text-zinc-600 hover:text-[#8b1e2f] hover:bg-[#8b1e2f]/10 transition-all shrink-0"
+                          className="w-6 h-6 flex items-center justify-center rounded-full text-zinc-600 hover:text-[#c8102e] hover:bg-[#c8102e]/10 transition-all shrink-0"
                           aria-label={`Remove ${title} from cart`}
                           tabIndex={0}
                         >
@@ -261,7 +261,7 @@ const CartPage: React.FC = () => {
                         }).format(shippingPreview.price)}
                       </span>
                     ) : (
-                      <span className="text-[#8b1e2f] uppercase text-[10px] font-bold tracking-widest">
+                      <span className="text-[#c8102e] uppercase text-[10px] font-bold tracking-widest">
                         Calcular abaixo
                       </span>
                     )}
@@ -297,11 +297,11 @@ const CartPage: React.FC = () => {
 
               <Link
                 to="/checkout"
-                className="block w-full bg-white text-black py-6 text-center text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#8b1e2f] hover:text-white transition-all shadow-xl relative overflow-hidden group"
+                className="block w-full bg-white text-black py-6 text-center text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#c8102e] hover:text-white transition-all shadow-xl relative overflow-hidden group"
                 tabIndex={0}
                 aria-label="Finalizar compra"
               >
-                <span className="absolute inset-0 w-full h-full bg-[#8b1e2f] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                <span className="absolute inset-0 w-full h-full bg-[#c8102e] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
                 <span className="relative flex items-center justify-center gap-3">
                   Finalizar Compra <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </span>
@@ -309,7 +309,7 @@ const CartPage: React.FC = () => {
 
               <div className="mt-8 space-y-4">
                 <div className="flex items-center gap-3 text-zinc-500 bg-zinc-900/50 p-4 rounded-sm border border-white/5">
-                  <ShieldCheck size={16} className="text-[#8b1e2f]" />
+                  <ShieldCheck size={16} className="text-[#c8102e]" />
                   <span className="text-[9px] font-bold uppercase tracking-widest">Checkout 100% Seguro</span>
                 </div>
                 <div className="flex items-center gap-3 text-zinc-500 bg-zinc-900/50 p-4 rounded-sm border border-white/5">

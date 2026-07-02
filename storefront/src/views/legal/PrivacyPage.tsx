@@ -245,7 +245,7 @@ const PrivacyPage: React.FC = () => (
           href="https://instagram.com/joisdobairro"
           target="_blank"
           rel="noreferrer"
-          className="text-[#8b1e2f] hover:underline"
+          className="text-[#c8102e] hover:underline"
         >
           @joisdobairro
         </a>
@@ -270,7 +270,7 @@ const PrivacyPage: React.FC = () => (
           href="https://instagram.com/joisdobairro"
           target="_blank"
           rel="noreferrer"
-          className="text-[#8b1e2f] hover:underline"
+          className="text-[#c8102e] hover:underline"
         >
           @joisdobairro
         </a>
@@ -281,7 +281,7 @@ const PrivacyPage: React.FC = () => (
             href="https://www.gov.br/anpd"
             target="_blank"
             rel="noreferrer"
-            className="text-[#8b1e2f] hover:underline"
+            className="text-[#c8102e] hover:underline"
           >
             www.gov.br/anpd
           </a>

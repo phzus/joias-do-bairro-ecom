@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuToggle, isMenuOpen }) => {
           >
             <ShoppingBag size={20} strokeWidth={1.5} className="text-white/50 group-hover:text-white transition-colors" />
             {totalItems > 0 && (
-              <span className="absolute -top-1.5 -right-2 bg-[#8b1e2f] text-white text-[9px] min-w-[16px] h-[16px] px-1 rounded-full flex items-center justify-center font-bold">
+              <span className="absolute -top-1.5 -right-2 bg-[#c8102e] text-white text-[9px] min-w-[16px] h-[16px] px-1 rounded-full flex items-center justify-center font-bold">
                 {totalItems}
               </span>
             )}

@@ -87,7 +87,7 @@ const OrderDetailPage: React.FC = () => {
   if (loading || authLoading) {
     return (
       <div className="min-h-[80vh] flex items-center justify-center bg-[#0a0a0a]">
-        <Loader2 size={32} className="animate-spin text-[#8b1e2f]" />
+        <Loader2 size={32} className="animate-spin text-[#c8102e]" />
       </div>
     )
   }
@@ -104,7 +104,7 @@ const OrderDetailPage: React.FC = () => {
           </p>
           <Link
             to="/conta"
-            className="inline-flex items-center gap-3 px-12 py-5 bg-white text-black text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#8b1e2f] hover:text-white transition-all"
+            className="inline-flex items-center gap-3 px-12 py-5 bg-white text-black text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#c8102e] hover:text-white transition-all"
           >
             Entrar
           </Link>
@@ -122,7 +122,7 @@ const OrderDetailPage: React.FC = () => {
           </h1>
           <Link
             to="/conta"
-            className="inline-flex items-center gap-3 px-12 py-5 bg-white text-black text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#8b1e2f] hover:text-white transition-all"
+            className="inline-flex items-center gap-3 px-12 py-5 bg-white text-black text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#c8102e] hover:text-white transition-all"
           >
             Voltar à conta
           </Link>
@@ -169,7 +169,7 @@ const OrderDetailPage: React.FC = () => {
             className="bg-zinc-950 border border-white/10 p-8 mb-10"
           >
             <div className="flex items-center gap-3 mb-6">
-              <Truck size={16} className="text-[#8b1e2f]" />
+              <Truck size={16} className="text-[#c8102e]" />
               <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400">
                 Envio
               </span>
@@ -207,7 +207,7 @@ const OrderDetailPage: React.FC = () => {
             </div>
             <Link
               to={`/rastrear/${order.id}`}
-              className="mt-6 inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#8b1e2f] hover:text-white transition-colors"
+              className="mt-6 inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#c8102e] hover:text-white transition-colors"
             >
               <Package size={12} />
               Ver rastreio detalhado

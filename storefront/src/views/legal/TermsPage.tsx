@@ -16,11 +16,11 @@ const TermsPage: React.FC = () => (
         <strong>Joias do Bairro</strong> (<code>joisdobairro.com</code>), você
         declara que leu, entendeu e concorda integralmente com estes Termos e
         Condições, com nossa{' '}
-        <Link to="/politica-de-privacidade" className="text-[#8b1e2f] hover:underline">
+        <Link to="/politica-de-privacidade" className="text-[#c8102e] hover:underline">
           Política de Privacidade
         </Link>{' '}
         e com nossa{' '}
-        <Link to="/trocas-e-devolucoes" className="text-[#8b1e2f] hover:underline">
+        <Link to="/trocas-e-devolucoes" className="text-[#c8102e] hover:underline">
           Política de Trocas e Devoluções
         </Link>
         . Caso não concorde, pedimos que não utilize o site.
@@ -43,7 +43,7 @@ const TermsPage: React.FC = () => (
           href="https://instagram.com/joisdobairro"
           target="_blank"
           rel="noreferrer"
-          className="text-[#8b1e2f] hover:underline"
+          className="text-[#c8102e] hover:underline"
         >
           @joisdobairro
         </a>
@@ -133,7 +133,7 @@ const TermsPage: React.FC = () => (
       </p>
       <p>
         Para mais detalhes, consulte nossa{' '}
-        <Link to="/entrega" className="text-[#8b1e2f] hover:underline">
+        <Link to="/entrega" className="text-[#c8102e] hover:underline">
           Política de Envios
         </Link>
         .
@@ -178,12 +178,12 @@ const TermsPage: React.FC = () => (
           href="https://instagram.com/joisdobairro"
           target="_blank"
           rel="noreferrer"
-          className="text-[#8b1e2f] hover:underline"
+          className="text-[#c8102e] hover:underline"
         >
           @joisdobairro
         </a>{' '}
         ou consulte nossa{' '}
-        <Link to="/trocas-e-devolucoes" className="text-[#8b1e2f] hover:underline">
+        <Link to="/trocas-e-devolucoes" className="text-[#c8102e] hover:underline">
           Política de Trocas e Devoluções
         </Link>
         .
@@ -263,7 +263,7 @@ const TermsPage: React.FC = () => (
           href="https://instagram.com/joisdobairro"
           target="_blank"
           rel="noreferrer"
-          className="text-[#8b1e2f] hover:underline"
+          className="text-[#c8102e] hover:underline"
         >
           @joisdobairro
         </a>
@@ -276,7 +276,7 @@ const TermsPage: React.FC = () => (
             href="https://www.consumidor.gov.br"
             target="_blank"
             rel="noreferrer"
-            className="text-[#8b1e2f] hover:underline"
+            className="text-[#c8102e] hover:underline"
           >
             consumidor.gov.br
           </a>{' '}

@@ -75,7 +75,7 @@ const Field: React.FC<{
       placeholder={placeholder}
       disabled={disabled}
       maxLength={maxLength}
-      className="w-full bg-transparent border-b py-4 text-sm font-medium text-white placeholder:text-zinc-800 border-zinc-800 focus:border-[#8b1e2f] focus:outline-none transition-all disabled:text-zinc-500"
+      className="w-full bg-transparent border-b py-4 text-sm font-medium text-white placeholder:text-zinc-800 border-zinc-800 focus:border-[#c8102e] focus:outline-none transition-all disabled:text-zinc-500"
     />
   </div>
 )
@@ -213,7 +213,7 @@ const AuthView: React.FC = () => {
           />
 
           {error && (
-            <div className="flex items-center gap-3 bg-[#8b1e2f]/10 border border-[#8b1e2f]/20 p-4 text-[#8b1e2f] text-xs font-medium">
+            <div className="flex items-center gap-3 bg-[#c8102e]/10 border border-[#c8102e]/20 p-4 text-[#c8102e] text-xs font-medium">
               <AlertCircle size={14} />
               <span>{error}</span>
             </div>
@@ -222,7 +222,7 @@ const AuthView: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#8b1e2f] text-white py-6 text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-white hover:text-black transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+            className="w-full bg-[#c8102e] text-white py-6 text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-white hover:text-black transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3"
           >
             {loading && <Loader2 size={14} className="animate-spin" />}
             {mode === 'login' ? 'Entrar' : 'Criar minha conta'}
@@ -302,7 +302,7 @@ const ProfileTab: React.FC = () => {
       </div>
 
       {message && (
-        <div className="text-[10px] font-bold uppercase tracking-widest text-[#8b1e2f]">
+        <div className="text-[10px] font-bold uppercase tracking-widest text-[#c8102e]">
           {message}
         </div>
       )}
@@ -310,7 +310,7 @@ const ProfileTab: React.FC = () => {
       <button
         onClick={save}
         disabled={saving}
-        className="bg-white text-black px-12 py-5 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#8b1e2f] hover:text-white transition-all disabled:opacity-40 flex items-center gap-3"
+        className="bg-white text-black px-12 py-5 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#c8102e] hover:text-white transition-all disabled:opacity-40 flex items-center gap-3"
       >
         {saving && <Loader2 size={14} className="animate-spin" />}
         Salvar alterações
@@ -343,7 +343,7 @@ const OrdersTab: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center gap-3 text-zinc-500">
-        <Loader2 size={14} className="animate-spin text-[#8b1e2f]" />
+        <Loader2 size={14} className="animate-spin text-[#c8102e]" />
         <span className="text-[10px] font-bold uppercase tracking-widest">
           Carregando pedidos…
         </span>
@@ -353,7 +353,7 @@ const OrdersTab: React.FC = () => {
 
   if (error) {
     return (
-      <div className="flex items-center gap-3 text-[#8b1e2f]">
+      <div className="flex items-center gap-3 text-[#c8102e]">
         <AlertCircle size={14} />
         <span>{error}</span>
       </div>
@@ -372,7 +372,7 @@ const OrdersTab: React.FC = () => {
         </p>
         <Link
           to="/"
-          className="inline-flex items-center gap-3 px-12 py-5 bg-white text-black text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#8b1e2f] hover:text-white transition-all"
+          className="inline-flex items-center gap-3 px-12 py-5 bg-white text-black text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#c8102e] hover:text-white transition-all"
         >
           Explorar peças
         </Link>
@@ -398,7 +398,7 @@ const OrdersTab: React.FC = () => {
           <Link
             key={order.id}
             to={`/pedido/${order.id}`}
-            className="block bg-zinc-950 border border-white/10 hover:border-[#8b1e2f]/40 transition-all p-6"
+            className="block bg-zinc-950 border border-white/10 hover:border-[#c8102e]/40 transition-all p-6"
           >
             <div className="flex items-start justify-between gap-4 flex-wrap">
               <div>
@@ -413,7 +413,7 @@ const OrdersTab: React.FC = () => {
                 </div>
               </div>
               <div className="text-right">
-                <div className="text-[9px] font-bold uppercase tracking-widest text-[#8b1e2f] mb-2">
+                <div className="text-[9px] font-bold uppercase tracking-widest text-[#c8102e] mb-2">
                   {status}
                 </div>
                 <div className="text-2xl font-light tracking-tighter">
@@ -516,7 +516,7 @@ const AddressesTab: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center gap-3 text-zinc-500">
-        <Loader2 size={14} className="animate-spin text-[#8b1e2f]" />
+        <Loader2 size={14} className="animate-spin text-[#c8102e]" />
         <span className="text-[10px] font-bold uppercase tracking-widest">
           Carregando endereços…
         </span>
@@ -533,7 +533,7 @@ const AddressesTab: React.FC = () => {
         </h2>
         <button
           onClick={() => setShowForm(!showForm)}
-          className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#8b1e2f] hover:text-white transition-colors"
+          className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#c8102e] hover:text-white transition-colors"
         >
           <Plus size={14} />
           {showForm ? 'Cancelar' : 'Novo endereço'}
@@ -541,7 +541,7 @@ const AddressesTab: React.FC = () => {
       </div>
 
       {error && (
-        <div className="flex items-center gap-3 text-[#8b1e2f]">
+        <div className="flex items-center gap-3 text-[#c8102e]">
           <AlertCircle size={14} />
           <span>{error}</span>
         </div>
@@ -616,7 +616,7 @@ const AddressesTab: React.FC = () => {
             <button
               onClick={save}
               disabled={saving}
-              className="bg-white text-black px-12 py-5 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#8b1e2f] hover:text-white transition-all disabled:opacity-40 flex items-center gap-3"
+              className="bg-white text-black px-12 py-5 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#c8102e] hover:text-white transition-all disabled:opacity-40 flex items-center gap-3"
             >
               {saving && <Loader2 size={14} className="animate-spin" />}
               Salvar endereço
@@ -641,7 +641,7 @@ const AddressesTab: React.FC = () => {
           >
             <button
               onClick={() => remove(addr.id)}
-              className="absolute top-4 right-4 w-7 h-7 flex items-center justify-center text-zinc-600 hover:text-[#8b1e2f] hover:bg-[#8b1e2f]/10 rounded-full transition-all"
+              className="absolute top-4 right-4 w-7 h-7 flex items-center justify-center text-zinc-600 hover:text-[#c8102e] hover:bg-[#c8102e]/10 rounded-full transition-all"
               aria-label="Remover endereço"
             >
               <Trash2 size={14} strokeWidth={1.5} />
@@ -675,7 +675,7 @@ const AccountPage: React.FC = () => {
   if (loading) {
     return (
       <div className="min-h-[80vh] flex items-center justify-center bg-[#0a0a0a]">
-        <Loader2 size={32} className="animate-spin text-[#8b1e2f]" />
+        <Loader2 size={32} className="animate-spin text-[#c8102e]" />
       </div>
     )
   }

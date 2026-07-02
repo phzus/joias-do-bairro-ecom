@@ -32,26 +32,58 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ title, subtitle, highligh
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="inline-flex items-center gap-2 bg-[#8b1e2f]/10 border border-[#8b1e2f]/20 rounded-full px-4 py-1.5 mb-5"
+        className="inline-flex items-center gap-2 bg-[#c8102e]/10 border border-[#c8102e]/20 rounded-full px-4 py-1.5 mb-5"
       >
-        <span className="w-2 h-2 rounded-full bg-[#8b1e2f] animate-pulse" />
-        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#8b1e2f]">
+        <span className="w-2 h-2 rounded-full bg-[#c8102e] animate-pulse" />
+        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#c8102e]">
           Compre agora
         </span>
       </motion.div>
     )}
-    <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#8b1e2f] mb-3">
+    <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#c8102e] mb-3">
       {subtitle}
     </p>
     <h2 className={`font-black uppercase tracking-tight text-white leading-none ${highlighted ? 'text-4xl md:text-6xl' : 'text-3xl md:text-5xl'}`}>
       {title}
     </h2>
-    <div className={`mt-4 h-px bg-[#8b1e2f]/40 ${highlighted ? 'w-24' : 'w-16'}`} />
+    <div className={`mt-4 h-px bg-[#c8102e]/40 ${highlighted ? 'w-24' : 'w-16'}`} />
     {highlighted && (
       <p className="mt-4 text-xs md:text-sm text-zinc-500 max-w-lg">
         Edição limitada, qualidade premium. Joias do Bairro.
       </p>
     )}
+  </motion.div>
+);
+
+const ProductsSectionHeader: React.FC = () => (
+  <motion.div
+    initial={{ opacity: 0, y: 16 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+    className="relative mb-16 md:mb-24"
+  >
+    {/* Giant outlined watermark — purely decorative, reinforces "produtos" without competing for reading attention */}
+    <span
+      aria-hidden="true"
+      className="pointer-events-none select-none absolute -top-6 md:-top-10 left-0 right-0 text-center text-[20vw] md:text-[9vw] font-black italic uppercase leading-none tracking-tighter text-transparent"
+      style={{ WebkitTextStroke: '1px rgba(255,255,255,0.06)' }}
+    >
+      Produtos
+    </span>
+
+    <div className="relative flex flex-col items-center text-center pt-12 md:pt-16">
+      <span className="inline-flex items-center gap-2 bg-[#c8102e]/10 border border-[#c8102e]/20 rounded-full px-4 py-1.5 mb-5">
+        <span className="w-2 h-2 rounded-full bg-[#c8102e] animate-pulse" />
+        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white">
+          Arquivo Completo
+        </span>
+      </span>
+      <h2 className="font-black uppercase italic tracking-tight text-white leading-none text-4xl md:text-6xl">
+        Produtos
+      </h2>
+      <div className="mt-5 h-1 w-24 bg-[#c8102e]" />
+    </div>
   </motion.div>
 );
 
@@ -73,7 +105,7 @@ const StickerSection: React.FC<{ category: HttpTypes.StoreProductCategory, categ
 
   return (
     <section id={`category-${category.handle}`} className="relative">
-      <div className="absolute -inset-x-4 -inset-y-8 md:-inset-x-6 md:-inset-y-12 bg-linear-to-b from-[#8b1e2f]/3 via-transparent to-transparent rounded-3xl pointer-events-none" />
+      <div className="absolute -inset-x-4 -inset-y-8 md:-inset-x-6 md:-inset-y-12 bg-linear-to-b from-[#c8102e]/3 via-transparent to-transparent rounded-3xl pointer-events-none" />
       <div className="relative">
         <SectionHeader
           title={category.name}
@@ -97,14 +129,14 @@ const StickerSection: React.FC<{ category: HttpTypes.StoreProductCategory, categ
             <>
               <button
                 onClick={scrollPrev}
-                className="absolute left-2 top-[40%] -translate-y-1/2 bg-black/50 backdrop-blur-md p-2 rounded-full border border-white/10 text-white hover:bg-[#8b1e2f] transition-colors z-10"
+                className="absolute left-2 top-[40%] -translate-y-1/2 bg-black/50 backdrop-blur-md p-2 rounded-full border border-white/10 text-white hover:bg-[#c8102e] transition-colors z-10"
                 aria-label="Anterior"
               >
                 <ChevronLeft size={20} />
               </button>
               <button
                 onClick={scrollNext}
-                className="absolute right-2 top-[40%] -translate-y-1/2 bg-black/50 backdrop-blur-md p-2 rounded-full border border-white/10 text-white hover:bg-[#8b1e2f] transition-colors z-10"
+                className="absolute right-2 top-[40%] -translate-y-1/2 bg-black/50 backdrop-blur-md p-2 rounded-full border border-white/10 text-white hover:bg-[#c8102e] transition-colors z-10"
                 aria-label="Próximo"
               >
                 <ChevronRight size={20} />
@@ -374,14 +406,14 @@ const ProductListPage: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6 py-16 md:py-24 relative z-10 space-y-16 md:space-y-24">
           {(loading || categoriesLoading) && (
             <div className="flex items-center justify-center py-32">
-              <Loader2 size={32} className="animate-spin text-[#8b1e2f]" />
+              <Loader2 size={32} className="animate-spin text-[#c8102e]" />
               <span className="ml-4 text-zinc-500 text-xs uppercase tracking-widest font-bold">Carregando Arquivo...</span>
             </div>
           )}
 
           {error && (
             <div className="flex flex-col items-center justify-center py-32 text-center">
-              <p className="text-[#8b1e2f] text-sm font-bold uppercase tracking-widest mb-4">Erro do Sistema</p>
+              <p className="text-[#c8102e] text-sm font-bold uppercase tracking-widest mb-4">Erro do Sistema</p>
               <p className="text-zinc-600 text-xs">{error}</p>
             </div>
           )}
@@ -413,9 +445,11 @@ const ProductListPage: React.FC = () => {
                   title={category.name}
                   subtitle={`Coleção ${String(groupIdx + 1).padStart(2, '0')}`}
                 />
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 md:gap-x-6 gap-y-10 md:gap-y-14">
+                <div className="flex flex-wrap justify-center gap-x-4 md:gap-x-6 gap-y-10 md:gap-y-14">
                   {categoryProducts.map((product, idx) => (
-                    <ProductCard key={product.id} product={product} index={idx} />
+                    <div key={product.id} className="w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)]">
+                      <ProductCard product={product} index={idx} />
+                    </div>
                   ))}
                 </div>
               </section>
@@ -423,11 +457,13 @@ const ProductListPage: React.FC = () => {
           })}
 
           {!loading && !categoriesLoading && !error && uncategorized.length > 0 && (
-            <section id="uncategorized-section">
-              <SectionHeader title="Outros" subtitle="Arquivo" />
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 md:gap-x-6 gap-y-10 md:gap-y-14">
+            <section id="uncategorized-section" className="min-h-dvh flex flex-col justify-center">
+              <ProductsSectionHeader />
+              <div className="flex flex-wrap justify-center gap-x-4 md:gap-x-6 gap-y-10 md:gap-y-14">
                 {uncategorized.map((product, idx) => (
-                  <ProductCard key={product.id} product={product} index={idx} />
+                  <div key={product.id} className="w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.125rem)]">
+                    <ProductCard product={product} index={idx} />
+                  </div>
                 ))}
               </div>
             </section>

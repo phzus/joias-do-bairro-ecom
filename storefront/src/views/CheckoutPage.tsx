@@ -133,19 +133,19 @@ const InputField = ({
   inputRef?: React.Ref<HTMLInputElement>;
 }) => (
   <div className="space-y-3 relative group">
-    <label className="text-[8px] font-bold text-zinc-600 uppercase tracking-widest group-focus-within:text-[#8b1e2f] transition-colors">{label}</label>
+    <label className="text-[8px] font-bold text-zinc-600 uppercase tracking-widest group-focus-within:text-[#c8102e] transition-colors">{label}</label>
     <div className="relative">
       <input
         ref={inputRef} type={type} placeholder={placeholder} value={value}
         onChange={(e) => onChange(e.target.value)} onBlur={onBlur}
         autoComplete={autoComplete} disabled={disabled} maxLength={maxLength}
-        className={`w-full bg-transparent border-b py-4 pr-8 text-sm font-medium focus:outline-none transition-all placeholder:text-zinc-800 text-white disabled:text-zinc-500 disabled:cursor-not-allowed ${error ? 'border-[#8b1e2f]' : 'border-zinc-800 focus:border-[#8b1e2f]'}`}
+        className={`w-full bg-transparent border-b py-4 pr-8 text-sm font-medium focus:outline-none transition-all placeholder:text-zinc-800 text-white disabled:text-zinc-500 disabled:cursor-not-allowed ${error ? 'border-[#c8102e]' : 'border-zinc-800 focus:border-[#c8102e]'}`}
         aria-label={label} aria-invalid={!!error}
       />
       <div className="absolute right-0 top-1/2 -translate-y-1/2">
-        {loading && <Loader2 size={16} className="text-[#8b1e2f] animate-spin" />}
+        {loading && <Loader2 size={16} className="text-[#c8102e] animate-spin" />}
         {!loading && value && !error && (
-          <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} className="text-[#8b1e2f]">
+          <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} className="text-[#c8102e]">
             <CheckCircle2 size={16} />
           </motion.div>
         )}
@@ -153,7 +153,7 @@ const InputField = ({
     </div>
     {error && (
       <motion.p initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }}
-        className="text-[9px] font-medium text-[#8b1e2f] tracking-wide">{error}</motion.p>
+        className="text-[9px] font-medium text-[#c8102e] tracking-wide">{error}</motion.p>
     )}
   </div>
 );
@@ -169,13 +169,13 @@ const StepProgress = ({ step }: { step: Step }) => {
         {['Endereço', 'Pagar'].map((label, idx) => (
           <div key={label} className="flex flex-col items-center">
             <span className={`text-[9px] font-bold uppercase tracking-[0.3em] transition-colors ${idx <= currentIndex ? 'text-white' : 'text-zinc-700'}`}>{label}</span>
-            <span className={`text-[8px] mt-1 transition-colors ${idx === currentIndex ? 'text-[#8b1e2f]' : 'text-transparent'}`}>Etapa {idx + 1} de 2</span>
+            <span className={`text-[8px] mt-1 transition-colors ${idx === currentIndex ? 'text-[#c8102e]' : 'text-transparent'}`}>Etapa {idx + 1} de 2</span>
           </div>
         ))}
       </div>
       <div className="h-[2px] w-full bg-zinc-900 relative overflow-hidden rounded-full">
         <motion.div initial={{ width: 0 }} animate={{ width: `${(currentIndex + 1) * 50}%` }}
-          className="absolute top-0 left-0 h-full bg-[#8b1e2f] transition-all duration-500" />
+          className="absolute top-0 left-0 h-full bg-[#c8102e] transition-all duration-500" />
       </div>
     </div>
   );
@@ -385,7 +385,7 @@ const MercadoPagoForm = ({
     if (asyncStatus === 'confirming') {
       return (
         <div className="mt-6 flex items-center gap-3 text-zinc-400 text-[9px] font-bold uppercase tracking-widest">
-          <Loader2 size={14} className="animate-spin text-[#8b1e2f]" />
+          <Loader2 size={14} className="animate-spin text-[#c8102e]" />
           Confirmando pedido...
         </div>
       );
@@ -393,7 +393,7 @@ const MercadoPagoForm = ({
     if (asyncStatus === 'rejected') {
       return (
         <div className="mt-6 space-y-4">
-          <div className="flex items-center gap-3 bg-[#8b1e2f]/10 border border-[#8b1e2f]/20 p-4 text-[#8b1e2f] text-xs font-medium rounded-sm">
+          <div className="flex items-center gap-3 bg-[#c8102e]/10 border border-[#c8102e]/20 p-4 text-[#c8102e] text-xs font-medium rounded-sm">
             <AlertCircle size={16} className="shrink-0" />
             <span>Pagamento não aprovado ou cancelado.</span>
           </div>
@@ -599,7 +599,7 @@ const MercadoPagoForm = ({
     return (
       <div className="space-y-8">
         <div className="bg-zinc-950 border border-white/10 rounded-sm p-6 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#8b1e2f] to-transparent opacity-50" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#c8102e] to-transparent opacity-50" />
           <p className="text-[9px] font-bold uppercase tracking-widest text-zinc-400 mb-4">
             Autenticação do banco
           </p>
@@ -621,7 +621,7 @@ const MercadoPagoForm = ({
         )}
         {error && (
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-3 bg-[#8b1e2f]/10 border border-[#8b1e2f]/20 p-4 text-[#8b1e2f] text-xs font-medium rounded-sm">
+            className="flex items-center gap-3 bg-[#c8102e]/10 border border-[#c8102e]/20 p-4 text-[#c8102e] text-xs font-medium rounded-sm">
             <AlertCircle size={16} className="shrink-0" /><span>{error}</span>
           </motion.div>
         )}
@@ -634,7 +634,7 @@ const MercadoPagoForm = ({
     return (
       <div className="space-y-8">
         <div className="bg-zinc-950 border border-white/10 rounded-sm p-6 md:p-8 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#8b1e2f] to-transparent opacity-50" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#c8102e] to-transparent opacity-50" />
           <p className="text-[9px] font-bold uppercase tracking-widest text-zinc-400 mb-6">Pagar com Pix</p>
           {pixQrBase64 && (
             <div className="flex justify-center mb-6">
@@ -667,7 +667,7 @@ const MercadoPagoForm = ({
     return (
       <div className="space-y-8">
         <div className="bg-zinc-950 border border-white/10 rounded-sm p-6 md:p-8 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#8b1e2f] to-transparent opacity-50" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#c8102e] to-transparent opacity-50" />
           <p className="text-[9px] font-bold uppercase tracking-widest text-zinc-400 mb-6">Boleto Bancário</p>
           {boletoLine && (
             <div className="space-y-3 mb-6">
@@ -713,7 +713,7 @@ const MercadoPagoForm = ({
         ] as const).map(({ id, label, icon: Icon }) => (
           <button
             key={id} type="button" onClick={() => { setMethod(id); setError(null); }}
-            className={`flex-1 flex items-center justify-center gap-2 py-4 text-[9px] font-bold uppercase tracking-widest transition-all ${method === id ? 'bg-[#8b1e2f] text-white' : 'text-zinc-500 hover:text-white'}`}
+            className={`flex-1 flex items-center justify-center gap-2 py-4 text-[9px] font-bold uppercase tracking-widest transition-all ${method === id ? 'bg-[#c8102e] text-white' : 'text-zinc-500 hover:text-white'}`}
           >
             <Icon size={12} />{label}
           </button>
@@ -723,7 +723,7 @@ const MercadoPagoForm = ({
       {/* Card form */}
       {method === 'card' && (
         <div className="bg-zinc-950 border border-white/10 rounded-sm p-6 md:p-8 relative overflow-hidden space-y-6">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#8b1e2f] to-transparent opacity-50" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#c8102e] to-transparent opacity-50" />
           <div className="flex justify-between items-center">
             <label className="text-[8px] font-bold text-zinc-600 uppercase tracking-widest">Dados do Cartão</label>
             <div className="flex gap-2"><ShieldCheck size={16} className="text-zinc-500" /><Lock size={16} className="text-zinc-500" /></div>
@@ -754,7 +754,7 @@ const MercadoPagoForm = ({
               <select
                 value={installments}
                 onChange={(e) => setInstallments(Number(e.target.value))}
-                className="w-full bg-transparent border-b border-zinc-800 py-4 text-sm font-medium text-white focus:outline-none focus:border-[#8b1e2f] transition-all"
+                className="w-full bg-transparent border-b border-zinc-800 py-4 text-sm font-medium text-white focus:outline-none focus:border-[#c8102e] transition-all"
               >
                 {installmentOptions.map((opt) => (
                   <option key={opt.installments} value={opt.installments} className="bg-zinc-900">
@@ -772,7 +772,7 @@ const MercadoPagoForm = ({
       {method === 'pix' && (
         <div className="bg-zinc-950 border border-white/10 rounded-sm p-6 md:p-8 space-y-4">
           <div className="flex items-center gap-3">
-            <QrCode size={24} className="text-[#8b1e2f]" />
+            <QrCode size={24} className="text-[#c8102e]" />
             <div>
               <p className="text-sm font-medium text-white">Pagamento instantâneo</p>
               <p className="text-[9px] text-zinc-500 uppercase tracking-widest mt-1">
@@ -787,7 +787,7 @@ const MercadoPagoForm = ({
       {method === 'boleto' && (
         <div className="bg-zinc-950 border border-white/10 rounded-sm p-6 md:p-8 space-y-6">
           <div className="flex items-center gap-3">
-            <FileText size={24} className="text-[#8b1e2f]" />
+            <FileText size={24} className="text-[#c8102e]" />
             <div>
               <p className="text-sm font-medium text-white">Boleto Bancário</p>
               <p className="text-[9px] text-zinc-500 uppercase tracking-widest mt-1">
@@ -803,7 +803,7 @@ const MercadoPagoForm = ({
       {/* Error */}
       {error && (
         <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-3 bg-[#8b1e2f]/10 border border-[#8b1e2f]/20 p-4 text-[#8b1e2f] text-xs font-medium rounded-sm">
+          className="flex items-center gap-3 bg-[#c8102e]/10 border border-[#c8102e]/20 p-4 text-[#c8102e] text-xs font-medium rounded-sm">
           <AlertCircle size={16} className="shrink-0" /><span>{error}</span>
         </motion.div>
       )}
@@ -811,7 +811,7 @@ const MercadoPagoForm = ({
       {/* Submit */}
       <button
         type="submit" disabled={loading || (method === 'card' && !mpReady)}
-        className="w-full bg-[#8b1e2f] text-white py-6 text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-white hover:text-black transition-all shadow-2xl disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3 relative overflow-hidden group"
+        className="w-full bg-[#c8102e] text-white py-6 text-[10px] font-bold uppercase tracking-[0.5em] hover:bg-white hover:text-black transition-all shadow-2xl disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3 relative overflow-hidden group"
       >
         <span className="absolute inset-0 w-full h-full bg-white -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
         <span className="relative flex items-center gap-3 group-hover:text-black transition-colors">
@@ -1087,8 +1087,8 @@ const CheckoutPage: React.FC = () => {
     return (
       <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
         className="min-h-screen flex flex-col items-center justify-center text-center p-6 bg-[#0a0a0a]">
-        <div className="w-20 h-20 border border-[#8b1e2f] flex items-center justify-center mb-10 shadow-[0_0_50px_rgba(139,30,47,0.15)]">
-          <CheckCircle2 size={32} className="text-[#8b1e2f]" />
+        <div className="w-20 h-20 border border-[#c8102e] flex items-center justify-center mb-10 shadow-[0_0_50px_rgba(200,16,46,0.15)]">
+          <CheckCircle2 size={32} className="text-[#c8102e]" />
         </div>
         <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 italic text-white">CONFIRMADO.</h1>
         <p className="max-w-xs mx-auto text-zinc-500 text-xs font-medium uppercase tracking-[0.3em] leading-relaxed mb-12">
@@ -1150,8 +1150,8 @@ const CheckoutPage: React.FC = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           {savedAddresses.map((addr) => (
                             <button key={addr.id} type="button" onClick={() => applySavedAddress(addr.id)}
-                              className={`text-left p-5 border transition-all ${selectedAddressId === addr.id ? 'border-[#8b1e2f] bg-[#8b1e2f]/5' : 'border-white/10 hover:border-white/20 bg-zinc-950'}`}>
-                              <div className="flex items-center gap-2 mb-2"><MapPin size={12} className="text-[#8b1e2f]" /><span className="text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-500">{addr.first_name} {addr.last_name}</span></div>
+                              className={`text-left p-5 border transition-all ${selectedAddressId === addr.id ? 'border-[#c8102e] bg-[#c8102e]/5' : 'border-white/10 hover:border-white/20 bg-zinc-950'}`}>
+                              <div className="flex items-center gap-2 mb-2"><MapPin size={12} className="text-[#c8102e]" /><span className="text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-500">{addr.first_name} {addr.last_name}</span></div>
                               <div className="text-sm font-medium text-white leading-relaxed">{addr.address_1}</div>
                               <div className="text-[10px] text-zinc-500 uppercase tracking-widest mt-2">{addr.city} · {addr.province} · {addr.postal_code}</div>
                             </button>
@@ -1248,12 +1248,12 @@ const CheckoutPage: React.FC = () => {
                         <label className="flex items-start gap-4 cursor-pointer group">
                           <div className="relative mt-1">
                             <input type="checkbox" checked={saveAddress} onChange={(e) => setSaveAddress(e.target.checked)} className="sr-only peer" />
-                            <div className="w-4 h-4 border border-white/20 peer-checked:bg-[#8b1e2f] peer-checked:border-[#8b1e2f] transition-all flex items-center justify-center">
+                            <div className="w-4 h-4 border border-white/20 peer-checked:bg-[#c8102e] peer-checked:border-[#c8102e] transition-all flex items-center justify-center">
                               {saveAddress && <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" strokeWidth="2" /></svg>}
                             </div>
                           </div>
                           <div className="flex-1">
-                            <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white group-hover:text-[#8b1e2f] transition-colors">
+                            <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white group-hover:text-[#c8102e] transition-colors">
                               <Save size={12} />Salvar endereço para próximas compras
                             </div>
                             <div className="text-[9px] text-zinc-600 uppercase tracking-widest mt-1">Você poderá selecioná-lo rapidamente em futuras compras</div>
@@ -1264,15 +1264,15 @@ const CheckoutPage: React.FC = () => {
 
                     {submitError && (
                       <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
-                        className="flex items-start gap-3 bg-[#8b1e2f]/10 border border-[#8b1e2f]/20 p-4 text-[#8b1e2f] text-xs font-medium rounded-sm">
+                        className="flex items-start gap-3 bg-[#c8102e]/10 border border-[#c8102e]/20 p-4 text-[#c8102e] text-xs font-medium rounded-sm">
                         <AlertCircle size={16} className="shrink-0 mt-0.5" /><span>{submitError}</span>
                       </motion.div>
                     )}
 
                     <div className="pt-8">
                       <button onClick={handleSubmitShipping} disabled={isSubmitting || !isFormValid}
-                        className="w-full bg-white text-black py-6 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#8b1e2f] hover:text-white transition-all shadow-xl disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3 relative overflow-hidden group">
-                        <span className="absolute inset-0 w-full h-full bg-[#8b1e2f] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
+                        className="w-full bg-white text-black py-6 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-[#c8102e] hover:text-white transition-all shadow-xl disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3 relative overflow-hidden group">
+                        <span className="absolute inset-0 w-full h-full bg-[#c8102e] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
                         <span className="relative flex items-center gap-3">
                           {isSubmitting && <Loader2 size={14} className="animate-spin" />}
                           Continuar para Pagamento
