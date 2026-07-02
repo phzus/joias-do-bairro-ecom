@@ -10,8 +10,10 @@ out/
 dist/
 build/
 
-# Environment — produção (nunca commitar)
+# Environment — nunca commitar (contém segredos reais)
+backend/.env
 backend/.env.production
+storefront/.env.local
 storefront/.env.production
 .env.*.local
 
